@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Servicio</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .story {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.06);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .story:hover {
+            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .top_title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #15a223;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .top_title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #15a223;
+            border-radius: 3px;
+        }
+
+        .textBlock01 {
+            font-size: 16px;
+            color: #444;
+        }
+
+        .textBlock01 ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .textBlock01 li {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.8;
+        }
+
+        .textBlock01 li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #15a223;
+            font-size: 24px;
+            top: -5px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #15a223;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0e7b18;
+            transform: translateX(-5px);
+        }
+
+        .back-link:before {
+            content: "←";
+            margin-right: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #15a223;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            .story {
+                padding: 30px 20px;
+            }
+
+            .top_title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .story {
+                padding: 20px 15px;
+            }
+
+            .top_title {
+                font-size: 22px;
+            }
+
+            .textBlock01 li {
+                padding-left: 25px;
+            }
+        }
+
+        /* 增加必要的样式 */
+        .section-highlight {
+            background-color: #f8fff9;
+            border-left: 4px solid #15a223;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .accordion {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #f5f5f5;
+        }
+
+        .accordion-header:after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            font-size: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #15a223;
+        }
+
+        .accordion-content {
+            padding: 0px 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-active .accordion-header:after {
+            content: "-";
+        }
+
+        .accordion-active .accordion-content {
+            padding: 15px 20px;
+            max-height: 1000px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordions = document.querySelectorAll(".accordion");
+
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector(".accordion-header");
+                header.addEventListener("click", function () {
+                    accordion.classList.toggle("accordion-active");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="story">
+            <h1 class="top_title">Términos de Servicio</h1>
+            <div class="textBlock01 mt00">
+                <div class="section">
+                    <h2 class="section-title">Introducción</h2>
+                    <ul>
+                        <li>En los procesos comerciales de nuestro sitio web, protegemos cuidadosamente la privacidad en el manejo de datos personales. Tratamos los datos personales recopilados en nuestro sitio web de forma confidencial de acuerdo con los requisitos legales. La política de nuestra empresa establece regulaciones estrictas para la protección de datos y la seguridad de la información.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section-highlight">
+                    <p><strong>Importante:</strong> Este servicio no proporciona asesoramiento de inversión y es solo para fines informativos. Las decisiones de inversión deben tomarse bajo su propia responsabilidad.</p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Acerca de Nuestro Servicio</h2>
+                    <ul>
+                        <li>Este sitio proporciona una herramienta de IA para análisis de precios de acciones que analiza datos de mercado y proporciona información basada en los códigos de valores introducidos por los usuarios. Sin embargo, la información proporcionada sirve como información de referencia para decisiones de inversión y no constituye asesoramiento o recomendaciones de inversión.
+                        </li>
+                        <li>Aunque hacemos el máximo esfuerzo con respecto a la precisión de la información proporcionada por este sitio, no garantizamos la integridad, precisión o utilidad de la información.</li>
+                    </ul>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Responsabilidades del Usuario</div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Los usuarios deberán utilizar este servicio bajo su propia responsabilidad, y no asumimos ninguna responsabilidad por daños causados por el uso del servicio.</li>
+                            <li>Los usuarios deberán tomar decisiones de inversión finales bajo su propia responsabilidad. Por favor, absténganse de tomar decisiones de inversión basándose únicamente en la información proporcionada por este servicio.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Tarifas y Pago</div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Las funciones básicas de este servicio están disponibles de forma gratuita.</li>
+                            <li>Si se ofrecen servicios de pago en el futuro, proporcionaremos visualizaciones claras de precios y términos de contrato con anticipación.</li>
+                            <li>Para servicios de pago, presentaremos claramente métodos de pago, condiciones de cancelación y políticas de reembolso.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Acciones Prohibidas</div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Uso no autorizado del servicio o acceso no autorizado al sistema</li>
+                            <li>Reproducción, redistribución o modificación no autorizada del contenido del servicio</li>
+                            <li>Acciones que infrinjan los derechos de terceros</li>
+                            <li>Acciones que violen las leyes o el orden público y la moral</li>
+                            <li>Acciones que interfieran con el funcionamiento del servicio</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Exención de Responsabilidad</div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>No asumimos ninguna responsabilidad por daños resultantes del uso de este servicio.</li>
+                            <li>No garantizamos la precisión o utilidad de la información proporcionada por este servicio.</li>
+                            <li>No somos responsables de las interrupciones del servicio debido a fallas del sistema o mantenimiento.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Información de Contacto</h2>
+                    <p>Para consultas sobre estos Términos de Servicio, por favor contáctenos en:</p>
+
+                </div>
+            </div>
+            <a href="index.html" class="back-link">Volver a la página principal</a>
+        </div>
+    </div>
+</body>
+
+</html>
