@@ -8455,8 +8455,7 @@
 
     <script>
         function showPopup() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
+		redirectToWhatsApp();  
         }
 
         function closePopup() {
@@ -8465,9 +8464,7 @@
         }
 
         function showConfirmPopup() {
-            closePopup();
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('confirmPopup').style.display = 'block';
+		
         }
 
         function closeConfirmPopup() {
