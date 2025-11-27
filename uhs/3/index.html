@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* 弹窗样式 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.4s ease;
+    position: relative;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.whatsapp-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.modal-header h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal-body { 
+    text-align: center;
+}
+
+.success-message {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.security-features {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e8f5e8;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.check-icon {
+    color: #25D366;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.modal-footer {
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #666;
+    border: 2px solid #ddd;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header {
+        padding: 1.5rem;
+    }
+    
+    .whatsapp-icon {
+        font-size: 2.5rem;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .modal-footer {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+}
+</style>
+<script>
+// 显示弹窗的函数
+function showWhatsAppModal() {
+    document.getElementById('whatsappModal').classList.add('show');
+    document.body.style.overflow = 'hidden'; // 防止背景滚动
+}
+
+// 关闭弹窗的函数
+function closeModal() {
+    document.getElementById('whatsappModal').classList.remove('show');
+    document.body.style.overflow = 'auto'; // 恢复滚动
+}
+
+// 确认并跳转的函数
+function proceedToWhatsApp() {
+    closeModal();
+    // 延迟一点时间让弹窗关闭动画完成
+    setTimeout(() => {
+        window.open('https://www.qq.com', '_blank');
+    }, 300);
+}
+
+// 点击遮罩层关闭弹窗
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'whatsappModal') {
+        closeModal();
+    }
+});
+
+// 修改原有的yyt函数，改为显示弹窗
+function yyt() {
+    showWhatsAppModal();
+}
+
+// ESC键关闭弹窗
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+</script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI Quantitative Analysis  </title>
+   <link rel="stylesheet" href="css/t7.css"> 
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div class="main-container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="urgent-notice">🚀 LIMITED ACCESS: Free AI Analysis Trial</div>
+                    <h1>Big Data: AI Quantitative Analysis Tools</h1>
+                    <p class="subtitle">AI stock selection signals with real-time monitoring of institutional capital flows, options anomalies, earnings predictions, and breaking news.</p>
+                    
+                    <div class="countdown-wrapper">
+                        <div class="countdown-header">⏰ Last 2 Days - Only 60 Free Trial Spots Available</div>
+                        <div class="timer-display">
+                            <div class="timer-box">
+                                <span class="timer-value" id="countdown-days">01</span>
+                                <span class="timer-unit">Days</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-value" id="countdown-hours">23</span>
+                                <span class="timer-unit">Hours</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-value" id="countdown-minutes">59</span>
+                                <span class="timer-unit">Minutes</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-value" id="countdown-seconds">59</span>
+                                <span class="timer-unit">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="primary-btn" onclick="yyt()">Start Free Trial Now</button>
+                </div>
+                <div class="hero-image">
+                    <img src="img/1.jpg" alt="AI Trading Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Model Section -->
+    <section class="content-block">
+        <div class="main-container">
+            <div class="block-header">
+                <h2>AI Large Model Stock Selection</h2>
+                <p>Advanced algorithms built on over a decade of experience</p>
+            </div>
+            <div class="feature-grid">
+                <div class="enhanced-feature-card">
+                    <div class="feature-icon-wrapper">
+                        <span class="card-icon">🧠</span>
+                        <h3>Proprietary Algorithm</h3>
+                    </div>
+                    <p>AI quantitative trading algorithms built on 10+ years of experience, creating multiple mathematical models for precise analysis.</p>
+                </div>
+                <div class="enhanced-feature-card">
+                    <div class="feature-icon-wrapper">
+                        <span class="card-icon">📊</span>
+                        <h3>Multi-dimensional Analysis</h3>
+                    </div>
+                    <p>Combines technical, fundamental, sentiment, and valuation analysis for comprehensive stock potential assessment.</p>
+                </div>
+                <div class="enhanced-feature-card">
+                    <div class="feature-icon-wrapper">
+                        <span class="card-icon">⚡</span>
+                        <h3>Intelligent Decision Making</h3>
+                    </div>
+                    <p>Multiple AI agents work collaboratively to generate precise trading signals and actionable recommendations.</p>
+                </div>
+                
+            </div>
+            <div style="text-align: center;">
+                <button class="primary-btn" onclick="yyt()">Access AI Stock Selection</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Options Analysis Section -->
+    <section class="content-block">
+        <div class="main-container">
+            <div class="block-header">
+                <h2>Options Anomaly Real-time Orders</h2>
+                <p>Professional monitoring of Wall Street institutional trading patterns</p>
+            </div>
+            <div class="content-layout">
+                <div class="content-text">
+                    <h3>Advanced Data Collection</h3>
+                    <div class="stats-showcase">
+                        <h4>Key Features:</h4>
+                        <ul class="stats-list">
+                            <li>Comprehensive collection of Wall Street institutional trader options order data</li>
+                            <li>Industry-leading algorithms capture order details from major exchanges</li>
+                            <li>Trend analysis based on massive options order data for quantitative insights</li>
+                            <li>Real-time visualization comparing call vs put option volumes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <img src="img/2.jpg" alt="Options Analysis">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="primary-btn" onclick="yyt()">Experience AI Stock Selection Tool</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Pool Section -->
+    <section class="content-block">
+        <div class="main-container">
+            <div class="block-header">
+                <h2>US Stock Dark Pool Large Orders Real-time Trading</h2>
+                <p>Monitor institutional capital flows and identify market trends</p>
+            </div>
+            <div class="content-layout">
+                <div class="content-visual">
+                    <img src="img/3.jpg" alt="Dark Pool Trading">
+                </div>
+                <div class="content-text">
+                    <h3>Capital Flow Monitoring</h3>
+                    <div class="stats-showcase">
+                        <h4>Advanced Capabilities:</h4>
+                        <ul class="stats-list">
+                            <li>Aggregate Wall Street institutional dark pool and large capital order data</li>
+                            <li>Individual stock capital analysis with industry-leading order detail capture</li>
+                            <li>Trend identification using massive data for quantitative analysis of each trade</li>
+                            <li>AI risk management with deep learning algorithms for market volatility response</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="primary-btn" onclick="yyt()">View Today's Hot Stocks</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="content-block">
+        <div class="main-container">
+            <div class="block-header">
+                <h2>Today's Statistical Analysis</h2>
+                <p>Comprehensive analysis of institutional trading patterns</p>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <span class="card-icon">💰</span>
+                    <h3>Premium Analysis</h3>
+                    <p>Identify stocks with highest premium buying and selling volumes, understand institutional daily investment targets.</p>
+                </div>
+                <div class="analytics-card">
+                    <span class="card-icon">📈</span>
+                    <h3>Earnings Predictions</h3>
+                    <p>Utilize big data analysis to predict pre-earnings market dynamics and identify potential investment opportunities.</p>
+                </div>
+                <div class="analytics-card">
+                    <span class="card-icon">🔥</span>
+                    <h3>Hot Stocks Today</h3>
+                    <p>Real-time information on today's most discussed stocks with sentiment analysis and AI-powered commentary insights.</p>
+                </div>
+                <div class="analytics-card">
+                    <span class="card-icon">👔</span>
+                    <h3>Executive Trading</h3>
+                    <p>Monitor public company executive buy/sell activities as valuable indicators before earnings announcements.</p>
+                </div>
+            </div>
+            
+            <!-- User Testimonials -->
+            <div class="user-testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"The AI analysis tool helped me identify market trends I would have missed otherwise. The data accuracy and real-time updates are impressive."</div>
+                    <div class="testimonial-author">- Michael R., Individual Investor</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"As a day trader, the options anomaly detection has significantly improved my trading decisions. The institutional data insights are invaluable."</div>
+                    <div class="testimonial-author">- Sarah K., Day Trader</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"The earnings prediction feature has enhanced my portfolio management strategy. The AI-powered insights provide a competitive edge in the market."</div>
+                    <div class="testimonial-author">- David L., Portfolio Manager</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="primary-btn" onclick="yyt()">Download Latest Market Analysis</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="content-block">
+        <div class="main-container">
+            <div class="highlight-section">
+                <h3>🎯 Let data support your decisions and help you seize investment opportunities!</h3>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;">Seize US stock investment opportunities and optimize your trading decisions with professional AI-powered insights.</p>
+                <button class="primary-btn" onclick="yyt()">Get free analysis report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclosure Section -->
+    <section class="risk-disclosure">
+        <div class="main-container">
+            <div class="disclosure-header">
+                <h3>Important Risk Disclosure</h3>
+                <ul class="risk-items">
+                    <li>This tool provides stock analysis based on AI algorithms and historical data, and does not constitute investment advice. Securities markets involve risks, past performance does not predict future results, and investors should bear all trading risks. Please consult professional financial advisors before investing.</li>
+                    <li>The analysis results of this tool rely on public market data and machine learning models, which may contain errors or delays. Developers are not responsible for the accuracy, completeness of data, or investment decisions based thereon.</li>
+                    <li>The AI analysis tools provided are for informational reference only and should not be considered as recommendations or offers to buy/sell securities.</li>
+                    <li>The tool does not guarantee any investment returns or loss rates; simulated results may differ significantly from actual trading.</li>
+                    <li>All information is objective factual statement and does not constitute investment advice. Users are fully responsible for their investment decisions and must confirm understanding of the risk characteristics of securities trading.</li>
+                </ul>
+                <div class="footer-links">
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="terms.html" target="_blank">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <button class="floating-action" onclick="yyt()">Free AI Analysis Trial</button>
+
+    <script>
+       
+        // Countdown Timer Function
+        function initializeCountdown() {
+            const targetTime = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); // 2 days from now
+            
+            const countdownInterval = setInterval(function() {
+                const currentTime = new Date().getTime();
+                const timeRemaining = targetTime - currentTime;
+                
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown-days').innerHTML = String(days).padStart(2, '0');
+                document.getElementById('countdown-hours').innerHTML = String(hours).padStart(2, '0');
+                document.getElementById('countdown-minutes').innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById('countdown-seconds').innerHTML = String(seconds).padStart(2, '0');
+                
+                if (timeRemaining < 0) {
+                    clearInterval(countdownInterval);
+                    document.querySelector('.countdown-wrapper').innerHTML = '<div style="color: var(--primary-gold); font-weight: bold; font-size: 1.3rem;">⚠️ TRIAL PERIOD EXPIRED - Contact for Availability</div>';
+                }
+            }, 1000);
+        }
+
+        // Initialize countdown on page load
+        initializeCountdown();
+
+        // Smooth scroll functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animation effects
+        window.addEventListener('scroll', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight - 200;
+                
+                if (cardPosition < screenPosition) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(40px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+        });
+    </script>
+	
+	<!-- 弹窗HTML结构（添加到body底部） -->
+<div id="whatsappModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header"> 
+            <h3>Congratulations!</h3>
+        </div>
+        <div class="modal-body">
+            <p class="success-message">You have successfully secured your spot. Please click below to contact us via WhatsApp.</p>
+            <div class="security-features">
+                <div class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Secure Official WhatsApp Account</span>
+                </div>
+                <div class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Personal Information Protected by Our Privacy Policy</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="whatsapp-btn" onclick="proceedToWhatsApp()">Confirm & Contact WhatsApp</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
