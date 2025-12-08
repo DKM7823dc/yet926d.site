@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
     <meta charset="UTF-8">
+	
+	
+       <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '630384713310994');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=630384713310994&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+	<script>
+	 function kkb() {
+	  fbq('track', 'AddToCart');
+      fbq('track', 'Purchase');
+            window.open('https://line.me/R/ti/p/@yourlineaccount', '_blank');
+        }
+	</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>黒瀬浩一 | 退職金融プランニング専門家</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -134,9 +162,128 @@
             .text-gray-600 { color: #94a3b8 !important; }
             .bg-gray-50 { background-color: #1e293b !important; }
         }
+
+        /* ポップアップモーダルス���イル */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .modal-content {
+                background-color: #1e293b;
+                border: 1px solid rgba(251, 191, 36, 0.2);
+            }
+        }
+
+        .modal-icon {
+            animation: bounce-in 0.6s ease;
+        }
+
+        @keyframes bounce-in {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-button:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: rotate(90deg);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .close-button {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .close-button:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-dark overflow-x-hidden">
+    <!-- ウェルカムポップアップ -->
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <div class="text-center space-y-6">
+                <!-- アイコン -->
+                <div class="modal-icon mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+
+                <!-- メッセージ -->
+                <div class="space-y-4">
+                    <h3 class="text-xl md:text-2xl font-bold text-deep-blue dark:text-white leading-relaxed">
+                        65歳を過ぎても働き続けますか？<br>
+                        月40万円の年金、本当に足りますか？
+                    </h3>
+
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 font-semibold">
+                        👉 今すぐ無料で「退職後の資金計画」を相談。
+                    </p>
+                </div>
+
+                <!-- CTAボタン -->
+                <button onclick="closeModalAndContact()" class="w-full golden-gradient px-8 py-4 text-lg font-bold text-deep-blue rounded-full hover:scale-105 transition-all duration-300 pulse-glow">
+                    無料相談を受ける
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- 導航菜单 -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
         <div class="container mx-auto px-4">
@@ -578,9 +725,7 @@
         });
 
         // kkb function for LINE redirect
-        function kkb() {
-            window.open('https://line.me/R/ti/p/@yourlineaccount', '_blank');
-        }
+       
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -615,6 +760,46 @@
                 card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
                 observer.observe(card);
             });
+
+            // ウェルカムモーダルの表示
+            showWelcomeModal();
+        });
+
+        // モーダル表示フラグ（グローバル変数）
+        let welcomeModalShown = false;
+
+        // ウェルカムモーダルを表示
+        function showWelcomeModal() {
+            // モーダルが既に表示されたかチェック（セッション内で1回のみ）
+            if (!welcomeModalShown) {
+                const modal = document.getElementById('welcomeModal');
+                if (modal) {
+                    modal.classList.add('active');
+                    welcomeModalShown = true;
+                }
+            }
+        }
+
+        // モーダルを閉じる
+        function closeModal() {
+            const modal = document.getElementById('welcomeModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // モーダルを閉じて連絡
+        function closeModalAndContact() {
+            closeModal();
+            kkb(); // LINE連絡を開く
+        }
+
+        // モーダル外をクリックしたら閉じる
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('welcomeModal');
+            if (modal && e.target === modal) {
+                closeModal();
+            }
         });
     </script>
 
