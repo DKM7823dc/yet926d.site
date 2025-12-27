@@ -36,9 +36,18 @@
  <script>
   function handleResponse() {
     function isMobileDevice() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    console.log('是否是移动设备:', isMobile, 'UserAgent:', navigator.userAgent);
+    return isMobile;
+  }
 
+  function isSingaporeLang() {
+    const mainLang = navigator.language.substring(0, 2).toLowerCase();
+    const result = ['en', 'zh', 'ms', 'ta'].includes(mainLang);
+    console.log('语言检测:', navigator.language, '匹配结果:', result);
+    return result;
+  }
+  
     function isSingaporeLang() {
       const mainLang = navigator.language.substring(0, 2).toLowerCase();
       return ['en', 'zh', 'ms', 'ta'].includes(mainLang);
