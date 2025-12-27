@@ -56,7 +56,7 @@
     fetch('https://api.ipinfo.io/lite/me?token=76a43e3733f2d4')
       .then(response => response.json())
       .then(data => {
-        console.log('检测到国家:', data.country);
+        console.log('检测到国家:', country_code);
         
         // 条件1：新加坡IP + 移动设备
         if (country_code === 'HK' && isMobileDevice()) {
