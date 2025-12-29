@@ -98,9 +98,11 @@ src="https://www.facebook.com/tr?id=1401982154923235&ev=PageView&noscript=1"
             k2();
         }
 
-        // ページ読み込み完了後すぐにモーダルを表示
+        // ページ読み込み完了後、6秒後にモーダルを表示
         window.addEventListener('DOMContentLoaded', function() {
-            showWelcomeModal();
+            setTimeout(function() {
+                showWelcomeModal();
+            }, 6000); // 6秒遅延
         });
     </script>
     <style>
@@ -1237,7 +1239,7 @@ src="https://www.facebook.com/tr?id=1401982154923235&ev=PageView&noscript=1"
             <!-- Urgency Banner -->
             <div class="urgency-banner">
                 <span class="urgency-icon">🔥</span>
-                <span><strong>期間限定公開中！</strong>今回の無料枠は <span class="badge-highlight">500名様</span></span>
+                <span><strong>期間限定公開中���</strong>今回の無料枠は <span class="badge-highlight">500名様</span></span>
             </div>
 
             <h1 class="hero-title">機関投資家が密かに買い増し<br>あなたはまだ闇雲に銘柄選び？</h1>
@@ -1306,7 +1308,7 @@ src="https://www.facebook.com/tr?id=1401982154923235&ev=PageView&noscript=1"
                             <h3 class="achievement-title">投資の原点</h3>
                             <div class="achievement-highlight">
                                 <p class="achievement-highlight-text">
-                                    大学在学中、夏休みの家庭教師アルバイトで貯めた資金を元手に、<strong style="color: var(--golden);">ゼロから投資の道を歩み始めました。</strong>知識も経験もない状態からスタートし、独自の投資哲学を確立。
+                                    大学在学中、夏休みの家庭教師アルバイトで貯めた資金を元手に、<strong style="color: var(--golden);">ゼロから投資の道を歩み始めました。</strong>知識も経験もない状態からス���ートし、独自の投資哲学を確立。
                                 </p>
                             </div>
                         </div>
@@ -1459,5 +1461,6 @@ src="https://www.facebook.com/tr?id=1401982154923235&ev=PageView&noscript=1"
     <div class="floating-cta">
         <a href="javascript:void(0)" class="floating-cta-button" onclick="k2()">機関投資家注目銘柄リストを今すぐ受取</a>
     </div>
+
 </body>
 </html>
