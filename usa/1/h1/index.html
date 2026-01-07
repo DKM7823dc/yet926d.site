@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Heavy Position Quality Stock List - Claim for Free</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        // Countdown functionality
+        let totalSeconds = 30 * 60; // 30 minutes
+
+        function updateCountdown() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+
+            const minutesStr = String(minutes).padStart(2, '0');
+            const secondsStr = String(seconds).padStart(2, '0');
+
+            document.getElementById('minutes').textContent = minutesStr;
+            document.getElementById('seconds').textContent = secondsStr;
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                totalSeconds = 30 * 60; // Reset countdown
+            }
+        }
+
+        // Start countdown after page loads
+        window.addEventListener('load', function() {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Simulate claimed count growth
+            updateClaimCount();
+            setInterval(updateClaimCount, 8000);
+        });
+
+        // Simulate claimed count
+        let claimedCount = 1847;
+        function updateClaimCount() {
+            claimedCount += Math.floor(Math.random() * 3) + 1;
+            const element = document.getElementById('claim-count');
+            if (element) {
+                element.textContent = claimedCount.toLocaleString();
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --midnight: #0a0e17;
+            --deep-navy: #111827;
+            --slate: #1e293b;
+            --accent-teal: #14b8a6;
+            --accent-teal-light: #5eead4;
+            --accent-amber: #f59e0b;
+            --accent-amber-light: #fbbf24;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --card-border: rgba(20, 184, 166, 0.25);
+            --glow-teal: rgba(20, 184, 166, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 90px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 85% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, var(--midnight) 0%, var(--deep-navy) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 70px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 28px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-teal-light) 50%, var(--accent-amber-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: var(--text-primary);
+            max-width: 780px;
+            margin: 0 auto 36px;
+            line-height: 1.85;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-highlight {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--accent-teal-light);
+            font-weight: 500;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-teal-light) 100%);
+            color: var(--midnight);
+            padding: 18px 52px;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 12px 35px var(--glow-teal);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .cta-button:hover::before {
+            width: 320px;
+            height: 320px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px var(--glow-teal);
+            border-color: var(--text-primary);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);
+            margin: 60px 0;
+            border-radius: 32px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 4vw, 2.75rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--accent-teal-light);
+            position: relative;
+            padding-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+            border-radius: 2px;
+        }
+
+        .problem-list {
+            list-style: none;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .problem-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px 28px 24px 65px;
+            margin-bottom: 18px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            position: relative;
+            transition: all 0.35s ease;
+            animation: slideInLeft 0.6s ease-out both;
+        }
+
+        .problem-item:nth-child(1) { animation-delay: 0.1s; }
+        .problem-item:nth-child(2) { animation-delay: 0.2s; }
+        .problem-item:nth-child(3) { animation-delay: 0.3s; }
+        .problem-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .problem-item::before {
+            content: '⚠';
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 26px;
+            color: var(--accent-amber);
+        }
+
+        .problem-item:hover {
+            transform: translateX(8px);
+            border-color: var(--accent-teal);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.15);
+        }
+
+        .problem-conclusion {
+            text-align: center;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--accent-teal-light);
+            margin-top: 40px;
+            font-weight: 500;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 0;
+        }
+
+        .solution-intro {
+            font-size: clamp(1.05rem, 2vw, 1.15rem);
+            text-align: center;
+            max-width: 880px;
+            margin: 0 auto 55px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-bottom: 55px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px 26px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
+            backdrop-filter: blur(8px);
+        }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+        .benefit-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 65%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-teal);
+            box-shadow: 0 16px 45px rgba(20, 184, 166, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 50px;
+            margin-bottom: 22px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .benefit-title {
+            font-size: clamp(1.15rem, 2vw, 1.25rem);
+            font-weight: 700;
+            color: var(--accent-teal-light);
+            margin-bottom: 14px;
+        }
+
+        .benefit-description {
+            font-size: clamp(0.95rem, 1.8vw, 1.02rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .solution-highlight {
+            text-align: center;
+            font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+            color: var(--accent-amber-light);
+            font-weight: 600;
+            margin: 55px 0 40px;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+            border-radius: 18px;
+            border: 2px solid var(--accent-teal);
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.85) 0%, rgba(30, 41, 59, 0.65) 100%);
+            border-radius: 32px;
+            margin: 60px 0;
+            border: 2px solid var(--accent-teal);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 45px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-45px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Floating Bottom Button */
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-teal-light) 100%);
+            padding: 16px 22px;
+            box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
+            border-top: 2px solid var(--accent-teal-light);
+            animation: slideUpFloat 0.6s ease-out;
+        }
+
+        .floating-cta-button {
+            display: block;
+            width: 100%;
+            max-width: 580px;
+            margin: 0 auto;
+            background: var(--midnight);
+            color: var(--accent-teal-light);
+            padding: 16px 22px;
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-teal);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            letter-spacing: 0.01em;
+        }
+
+        .floating-cta-button:hover {
+            background: var(--slate);
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px var(--glow-teal);
+        }
+
+        .floating-cta-button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes slideUpFloat {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.12) 0%, rgba(245, 158, 11, 0.08) 100%);
+            border: 2px solid var(--accent-teal);
+            border-radius: 22px;
+            padding: 28px 32px;
+            margin: 32px auto;
+            max-width: 560px;
+            text-align: center;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(20, 184, 166, 0.25);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(20, 184, 166, 0.5);
+            }
+        }
+
+        .countdown-label {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--accent-teal-light);
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .time-unit {
+            background: var(--midnight);
+            border: 2px solid var(--accent-teal);
+            border-radius: 14px;
+            padding: 16px 22px;
+            min-width: 85px;
+        }
+
+        .time-value {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--accent-teal-light);
+            line-height: 1;
+            font-family: 'DM Sans', monospace;
+        }
+
+        .time-label {
+            font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .time-separator {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--accent-teal);
+            font-weight: 700;
+        }
+
+        /* Marketing Badges */
+        .marketing-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin: 32px 0;
+        }
+
+        .badge {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .badge:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.2);
+        }
+
+        .badge-icon {
+            font-size: 1.15em;
+        }
+
+        .badge-highlight {
+            color: var(--accent-amber-light);
+            font-weight: 700;
+        }
+
+        /* Trust Indicators */
+        .trust-section {
+            background: rgba(20, 184, 166, 0.06);
+            border-radius: 18px;
+            padding: 35px 24px;
+            margin: 45px 0;
+            text-align: center;
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .trust-item {
+            padding: 20px;
+        }
+
+        .trust-number {
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--accent-teal-light);
+            line-height: 1;
+            margin-bottom: 12px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .trust-label {
+            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+            color: var(--text-secondary);
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%);
+            border-left: 4px solid var(--accent-amber);
+            border-radius: 12px;
+            padding: 16px 22px;
+            margin: 22px 0;
+            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+            color: var(--accent-amber-light);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .urgency-icon {
+            font-size: 1.5em;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.25; }
+        }
+
+        /* Section Sub Title */
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+            color: var(--accent-teal-light);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .final-cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 32px;
+            color: var(--accent-teal-light);
+            letter-spacing: -0.01em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 0 50px;
+            }
+
+            .problem-section,
+            .solution-section {
+                padding: 60px 0;
+            }
+
+            .problem-item {
+                padding: 20px 22px 20px 58px;
+            }
+
+            .benefit-card {
+                padding: 30px 22px;
+            }
+
+            .cta-button {
+                padding: 16px 42px;
+            }
+
+            .countdown-container {
+                padding: 22px 18px;
+            }
+
+            .time-unit {
+                min-width: 72px;
+                padding: 14px 16px;
+            }
+
+            .marketing-badges {
+                gap: 12px;
+            }
+
+            .badge {
+                padding: 10px 18px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .cta-button {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+
+            .problem-item::before {
+                left: 16px;
+                font-size: 22px;
+            }
+
+            .problem-item {
+                padding-left: 50px;
+            }
+
+            .countdown-timer {
+                gap: 12px;
+            }
+
+            .time-unit {
+                min-width: 62px;
+                padding: 12px 14px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-cta {
+                padding: 14px 16px;
+            }
+
+            .floating-cta-button {
+                padding: 14px 18px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Dark mode detection */
+        .dark body {
+            background: var(--midnight);
+        }
+    </style>
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Urgency Banner -->
+            <div class="urgency-banner">
+                <span class="urgency-icon">🔥</span>
+                <span><strong>Limited Time Access!</strong> Free spots limited to <span class="badge-highlight">500 people</span></span>
+            </div>
+
+            <h1 class="hero-title">Institutions Are Quietly<br>Accumulating Positions—<br>Are You Still Picking Stocks Blindly?</h1>
+            <p class="hero-subtitle">A "Quality Stock List" previously only circulated among professional institutions is now available for free for a limited time!</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-label">
+                    <span>⏰</span>
+                    <span>Limited Offer Countdown</span>
+                </div>
+                <div class="countdown-timer">
+                    <div class="time-unit">
+                        <div class="time-value" id="minutes">30</div>
+                        <div class="time-label">Minutes</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-value" id="seconds">00</div>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Badges -->
+            <div class="marketing-badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span><span class="badge-highlight" id="claim-count">1,847</span> people have claimed</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🎁</span>
+                    <span>100% Free to Claim</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>This Opening Only</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                This isn't generic industry hot picks, nor publicly available data. It's a real focus direction curated from new institutional position movements.
+            </p>
+            <p class="hero-highlight">Opportunities always favor those with faster information. This time, it's your turn to stay ahead.</p>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem-section">
+            <div class="container">
+                <h2 class="section-title">Most Investors Face These Challenges</h2>
+                <ul class="problem-list">
+                    <li class="problem-item">Too much market noise—don't know whose lead to follow</li>
+                    <li class="problem-item">Can't understand market reports? Can't make sense of market data? Hard to judge which companies are truly worth long-term attention?</li>
+                    <li class="problem-item">Hot trends come fast and go even faster—always half a step behind in stock picking</li>
+                    <li class="problem-item">Why do institutions favor certain stocks? The underlying logic is hard to access?</li>
+                </ul>
+                <p class="problem-conclusion">If you relate to any of these, this list was prepared for you!</p>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution-section">
+            <div class="container">
+                <h2 class="section-title">The Solution</h2>
+                <p class="solution-intro">
+                    We've screened the latest institutional position directions from multiple authoritative sources, combined with fundamentals, accumulation intensity, and industry outlook, to compile a clear, easy-to-read "Institutional Heavy Position Quality Stock List."
+                </p>
+
+                <!-- Trust Indicators -->
+                <div class="trust-section">
+                    <h3 class="section-subtitle" style="margin-bottom: 10px;">Why Trust Us?</h3>
+                    <div class="trust-grid">
+                        <div class="trust-item">
+                            <div class="trust-number">15+</div>
+                            <div class="trust-label">Authoritative Data Sources</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-number">200+</div>
+                            <div class="trust-label">Institutions Tracked</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-number">Daily</div>
+                            <div class="trust-label">Real-time Updates</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">With This List, You'll Get:</h3>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h4 class="benefit-title">Real Institutional Position Directions</h4>
+                        <p class="benefit-description">Know exactly where capital is flowing</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h4 class="benefit-title">Screened Quality Targets</h4>
+                        <p class="benefit-description">Solid fundamentals with real business backing</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📈</div>
+                        <h4 class="benefit-title">Key Data at a Glance</h4>
+                        <p class="benefit-description">Accumulation ratios, institution types, and more—all clearly visible</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⏱️</div>
+                        <h4 class="benefit-title">Save Massive Time</h4>
+                        <p class="benefit-description">No need to read announcements or research reports yourself—we've compiled the core information for you</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💡</div>
+                        <h4 class="benefit-title">More Reference Value</h4>
+                        <p class="benefit-description">Help you form a clearer market judgment framework instead of chasing highs and cutting losses!</p>
+                    </div>
+                </div>
+
+                <div class="solution-highlight">
+                    It's not about recommending stocks—it's about helping you see institutional thinking
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta" id="claim">
+            <div class="container">
+                <div class="urgency-banner" style="max-width: 600px; margin: 0 auto 30px;">
+                    <span class="urgency-icon">⚡</span>
+                    <span><strong>Limited Spots Remaining!</strong> Miss this one and wait for the next opening</span>
+                </div>
+
+                <h2 class="final-cta-title">
+                    Claim Now—Stop Picking Stocks Blindly
+                </h2>
+
+                <div class="marketing-badges" style="margin-bottom: 30px;">
+                    <div class="badge">
+                        <span class="badge-icon">⭐</span>
+                        <span>Professional Institutional-Grade Data</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">📱</span>
+                        <span>Instant One-Click Claim</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">💼</span>
+                        <span>Empower Investment Decisions</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Institutional Investment Analysis | Professional Investment Information Services</p>
+        </footer>
+    </div>
+
+    <!-- Floating Bottom CTA Button -->
+    <div class="floating-cta">
+        <a href="#claim" class="floating-cta-button">Join WhatsApp Group to Claim Institutional Position List</a>
+    </div>
+</body>
+</html>
