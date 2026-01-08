@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stock Analyzer - Quant Revolution</title>
+    
+	
+	<script>
+	 function k2() {
+            window.location.href = "https://www.qq.com";
+        }
+
+	</script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B1120',
+                            card: '#151F32',
+                            accent: '#3B82F6', // Blue
+                            success: '#10B981', // Green
+                        }
+                    },
+                    animation: {
+                        'scroll-vertical': 'scrollVertical 40s linear infinite',
+                        'scroll-table': 'scrollTable 60s linear infinite', 
+                    },
+                    keyframes: {
+                        scrollVertical: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-50%)' },
+                        },
+                        scrollTable: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        
+        .glass {
+            background: rgba(21, 31, 50, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #60A5FA, #2DD4BF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Loading Bar Animation */
+        .loading-bar {
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Hide scrollbar for smooth visual */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Pause animation on hover */
+        .pause-on-hover:hover {
+            animation-play-state: paused;
+        }
+
+        /* Modal Backdrop */
+        .modal-backdrop {
+            background-color: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-white pb-20">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14 md:h-16">
+                <div class="flex items-center gap-2 md:gap-3">
+                    <div class="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-blue-600 to-cyan-400 rounded flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-chart-line text-sm md:text-base"></i>
+                    </div>
+                    <span class="font-bold text-lg md:text-xl tracking-tight text-white">AI Stock Analyzer</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#performance" class="text-sm font-medium hover:text-brand-accent transition-colors">Performance</a>
+                    <a href="#features" class="text-sm font-medium hover:text-brand-accent transition-colors">Features</a>
+                    <a href="#philosophy" class="text-sm font-medium hover:text-brand-accent transition-colors">Philosophy</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-12 lg:pt-40 lg:pb-24 overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+            <div class="absolute top-20 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-blue-600/20 rounded-full blur-[80px]"></div>
+            <div class="absolute bottom-20 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-bolt text-yellow-400 mr-1.5"></i> Top US Quant Team Reveal
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-4 md:mb-6 leading-tight">
+                Core AI Trading <br>
+                <span class="text-gradient">Strategy Unveiled</span>
+            </h1>
+
+            <p class="text-base md:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 leading-relaxed px-2">
+                The Next Nvidia Is Here — Projected Gains > 300% — <span class="text-white font-semibold">Limited Spots: Join the Quant Revolution!</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Demo (Analysis Section) -->
+    <section id="analysis-section" class="py-12 md:py-20 bg-blue-900/10 border-y border-blue-900/30 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-600/20 text-blue-400 mb-4 md:mb-6 border border-blue-500/30">
+                    <i class="fa-solid fa-magnifying-glass text-xl md:text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">AI Stock Diagnosis</h2>
+                <p class="text-sm md:text-base text-slate-400">Enter US Stock Ticker for Instant AI-Driven Analysis</p>
+            </div>
+
+            <!-- 1. Input State -->
+            <div id="input-state" class="bg-brand-card p-2 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto flex flex-col sm:flex-row gap-2 transition-all duration-300">
+                <input 
+                    type="text" 
+                    id="ticker-input"
+                    placeholder="e.g. NVDA" 
+                    class="flex-1 bg-transparent text-white px-4 md:px-6 py-3 md:py-4 outline-none placeholder:text-slate-600 font-mono uppercase text-lg text-center sm:text-left"
+                >
+                <button onclick="startAnalysis()" class="bg-brand-accent hover:bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-colors whitespace-nowrap w-full sm:w-auto">
+                    Start Analysis
+                </button>
+            </div>
+
+            <!-- 2. Loading State (Hidden by default) -->
+            <div id="loading-state" class="hidden bg-brand-card p-6 md:p-8 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-16 h-16 mb-4">
+                        <div class="absolute inset-0 rounded-full border-4 border-slate-700"></div>
+                        <div class="absolute inset-0 rounded-full border-4 border-t-brand-accent border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
+                        <i class="fa-solid fa-microchip absolute inset-0 m-auto flex items-center justify-center text-cyan-400 text-xl animate-pulse"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2" id="loading-text">Initializing AI Core...</h3>
+                    <div class="w-full bg-slate-800 rounded-full h-2 mb-2 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full loading-bar"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-mono" id="loading-subtext">Connecting to server...</p>
+                </div>
+            </div>
+            
+            <p class="mt-6 text-xs text-slate-500 max-w-lg mx-auto px-4">
+                Note: This is a simplified demo. Real-time data processing requires connection to our secure server.
+            </p>
+        </div>
+    </section>
+
+    <!-- Performance Section (Auto Scrolling) -->
+    <section id="performance" class="py-12 md:py-20 bg-brand-card/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Past Performance Review</h2>
+                <p class="text-slate-400 text-sm md:text-base">Real-time tracking of our AI signals</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Highlight Card -->
+                <div class="lg:col-span-1 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fa-solid fa-trophy text-8xl md:text-9xl text-yellow-500"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="inline-block bg-yellow-500/20 text-yellow-400 text-[10px] font-bold px-2 py-1 rounded mb-4">
+                            BEST WINNER
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1">MicroStrategy</h3>
+                        <p class="text-slate-400 font-mono mb-6 text-sm">( MSTR )</p>
+                        
+                        <div class="text-4xl md:text-5xl font-black text-brand-success mb-6 tracking-tighter">
+                            + 510.2 %
+                        </div>
+
+                        <div class="space-y-3 border-t border-slate-700 pt-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-slate-400">Entry Price</span>
+                                <span class="text-white font-mono">$68.5</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-slate-400">Exit Price</span>
+                                <span class="text-white font-mono">$418.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scrolling Data Table -->
+                <div class="lg:col-span-2 bg-brand-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col h-[400px]">
+                    <div class="bg-slate-800/80 p-4 grid grid-cols-4 text-xs uppercase tracking-wider text-slate-400 font-semibold z-10 border-b border-slate-700">
+                        <div>Ticker</div>
+                        <div>Entry</div>
+                        <div class="text-right">Return</div>
+                        <div class="text-right">Period</div>
+                    </div>
+                    
+                    <div class="relative overflow-hidden flex-1 bg-brand-card">
+                        <!-- Pause animation on hover -->
+                        <div id="table-scroll-container" class="absolute w-full animate-scroll-table pause-on-hover">
+                            <!-- Rows will be injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+                    Unlock Your Edge: <br>
+                    <span class="text-brand-accent">AI Insights, Significant Returns.</span>
+                </h2>
+                <p class="text-sm md:text-lg text-slate-400 mb-8">
+                    Proprietary AI identifies high-potential trades first.
+                </p>
+                
+                <ul class="space-y-4 md:space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
+                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
+                        </div>
+                        <span class="text-slate-300 text-sm md:text-base">Get up to 10 premium signals designed for significant growth.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
+                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
+                        </div>
+                        <span class="text-slate-300 text-sm md:text-base">Trade with surgical precision and historical high accuracy.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
+                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
+                        </div>
+                        <span class="text-white font-semibold text-sm md:text-base">Limited spots, lock yours now for a smarter trading journey!</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Abstract Visual -->
+            <div class="relative mt-8 md:mt-0">
+                <div class="aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 p-6 md:p-8 flex flex-col justify-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#60A5FA 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    
+                    <div class="grid grid-cols-2 gap-3 md:gap-4 relative z-10">
+                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm">
+                            <i class="fa-solid fa-microchip text-cyan-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
+                            <div class="text-[10px] md:text-xs text-slate-400">Processing</div>
+                            <div class="font-bold text-white text-base md:text-lg">2.4M Nodes</div>
+                        </div>
+                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm">
+                            <i class="fa-solid fa-bullseye text-brand-success text-xl md:text-2xl mb-2 md:mb-3"></i>
+                            <div class="text-[10px] md:text-xs text-slate-400">Precision</div>
+                            <div class="font-bold text-white text-base md:text-lg">98.5%</div>
+                        </div>
+                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm col-span-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] md:text-xs text-slate-400">Signal Strength</span>
+                                <span class="text-[10px] md:text-xs text-brand-accent font-bold animate-pulse">STRONG BUY</span>
+                            </div>
+                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full w-[92%] bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Scrolling) -->
+    <section class="py-12 md:py-20 max-w-5xl mx-auto px-4 overflow-hidden">
+        <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">Real User Feedback</h2>
+        
+        <!-- Scrolling Container -->
+        <div class="relative h-[400px] overflow-hidden mask-linear">
+            <!-- Gradient Masks for smooth fade -->
+            <div class="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-brand-dark to-transparent z-10"></div>
+            <div class="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-brand-dark to-transparent z-10"></div>
+
+            <div id="testimonials-track" class="animate-scroll-vertical space-y-4">
+                <!-- Javascript will populate this with 2 sets of 10 reviews for seamless loop -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section (Updated) -->
+    <section id="philosophy" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
+        
+        <!-- Main Header -->
+        <div class="text-center max-w-3xl mx-auto mb-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">AI Is Just the Beginning</h2>
+            <p class="text-base md:text-xl text-slate-400 leading-relaxed">
+                Experience the power of AI through this demo. However, the real advantage lies in combining these insights with daily strategy and exclusive community guidance.
+            </p>
+        </div>
+
+        <!-- Core Philosophy Subsection -->
+        <div class="space-y-12 md:space-y-16">
+            <h3 class="text-2xl md:text-3xl font-bold text-brand-accent text-center mb-8">Our Core Philosophy</h3>
+
+            <!-- Row 1: Text Left, Image Right -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h4 class="text-xl md:text-2xl font-bold text-white mb-4">Move Beyond Hype, Dive into Data</h4>
+                    <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-6">
+                        The market is full of noise and fleeting trends. We focus on what truly matters: fundamental data, technical indicators, and calm, objective analysis to cut through the fog and find truly valuable investment opportunities. Our AI is immune to hype; it relies on data to identify robust long-term investment targets.
+                    </p>
+                    <div class="h-1 w-20 bg-brand-accent rounded-full"></div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl h-48 md:h-72 bg-slate-800">
+                         <img src="img/1.jpg" alt="Data Analysis" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Image Left, Text Right -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-1">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl h-48 md:h-72 bg-slate-800">
+                         <img src="img/2.jpg" alt="Empowering Investors" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <h4 class="text-xl md:text-2xl font-bold text-white mb-4">Empowering Every Investor</h4>
+                    <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-6">
+                        Professional-grade market analysis shouldn't be exclusive to Wall Street elites. We transform complex market data into clear, accessible insights that anyone can understand. Our goal is to give you the confidence to take control of your financial future.
+                    </p>
+                    <div class="h-1 w-20 bg-brand-accent rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Subsection -->
+        <div class="bg-brand-card/30 rounded-3xl p-8 md:p-12 border border-slate-800">
+            <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Why Choose Us?</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-800/40 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                    <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">AI-Driven Strategic Engine</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Our system is based on advanced multi-model AI technology for deep analysis. In our community, we turn this powerful data into actionable winning strategies.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-800/40 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                    <div class="w-12 h-12 bg-cyan-600/20 rounded-lg flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-eye text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Clarity in a Complex Market</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Get objective, AI-driven assessments free from emotional bias. Our experts help you explore the "why" behind the data for truly confident decisions.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-800/40 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                    <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center text-green-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Collaborative Expert Circle</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        An exclusive trading think tank. Share strategies, get real-time actionable guidance from seasoned experts, and grow alongside motivated investors.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Core Subsection -->
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Our Technical Core</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Tech Item 1 -->
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-xl border border-slate-800">
+                    <div class="shrink-0 mt-1">
+                        <i class="fa-solid fa-chart-pie text-brand-accent"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Predictive Quantitative Models</h4>
+                        <p class="text-sm text-slate-400">Our AI uses advanced statistical models to uncover market inefficiencies. We share these high-probability setups, including full entry and exit points, with the community.</p>
+                    </div>
+                </div>
+                <!-- Tech Item 2 -->
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-xl border border-slate-800">
+                    <div class="shrink-0 mt-1">
+                        <i class="fa-solid fa-heart-pulse text-red-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Market Sentiment Pulse</h4>
+                        <p class="text-sm text-slate-400">We process millions of data points to gauge market sentiment. This gives our community a crucial edge, helping you predict market shifts before they happen.</p>
+                    </div>
+                </div>
+                <!-- Tech Item 3 -->
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-xl border border-slate-800">
+                    <div class="shrink-0 mt-1">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Instant Market Intelligence</h4>
+                        <p class="text-sm text-slate-400">Connected to real-time market data, our AI ensures every analysis is up-to-the-minute. We alert the community to opportunities the moment they arise.</p>
+                    </div>
+                </div>
+                <!-- Tech Item 4 -->
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-xl border border-slate-800">
+                    <div class="shrink-0 mt-1">
+                        <i class="fa-solid fa-globe text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Macroeconomic Advantage</h4>
+                        <p class="text-sm text-slate-400">Our AI scans global trends to see the big picture. This macro insight helps our community members make smarter, more informed decisions on US stocks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer (Updated) -->
+    <footer class="bg-brand-dark border-t border-slate-900 pt-12 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <div class="w-6 h-6 bg-brand-accent rounded flex items-center justify-center text-white text-xs">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <span class="font-bold text-xl text-white">AI Stock Analyzer</span>
+            </div>
+            
+            <p class="text-slate-500 text-sm mb-8">
+                © 2026 AI Stock Analyzer. All Rights Reserved.
+            </p>
+
+            <div class="max-w-3xl mx-auto text-[10px] text-slate-600 leading-relaxed border-t border-slate-900 pt-6">
+                <p>
+                    Disclaimer: All information and AI analysis results provided on this website are for reference only and do not constitute any investment advice. The stock market involves high risks, and investment should be done with caution. Please consult a professional financial advisor before making any investment decisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Result Modal (Fixed Overlay) -->
+    <div id="result-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 modal-backdrop transition-opacity" onclick="resetAnalysis()"></div>
+        
+        <!-- Modal Content -->
+        <div class="bg-brand-card p-6 md:p-8 rounded-2xl border border-brand-success/30 shadow-2xl shadow-green-900/40 max-w-lg w-full relative overflow-hidden z-10 transform transition-all scale-100">
+            <!-- Close Button -->
+            <button onclick="resetAnalysis()" class="absolute top-3 right-4 text-slate-400 hover:text-white transition-colors z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-success to-emerald-400"></div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-success">
+                    <i class="fa-solid fa-check text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Analysis Complete!</h3>
+                <p class="text-slate-300 text-sm mb-6">
+                    We have generated a comprehensive report combining Technicals, Fundamentals, and AI Prediction.
+                </p>
+                <div class="bg-slate-800/50 rounded-lg p-4 mb-6 border border-slate-700">
+                    <p class="text-xs text-slate-400 mb-1">AI Confidence Score</p>
+                    <!-- UPDATED: Added ID for JS targeting -->
+                    <div id="confidence-score" class="text-3xl font-black text-brand-success">98.4%</div>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">Receive your full report via WhatsApp:</p>
+                <button onclick="k2()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-2 group">
+                    <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                    Get Report on WhatsApp
+                </button>
+                <p class="text-[10px] text-slate-500 mt-3">Expert will explain the details for free.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Button - Initially Hidden, slides up on scroll -->
+    <div id="floating-cta" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 z-[100] transition-all duration-500 transform translate-y-32 opacity-0 pointer-events-none">
+        <button onclick="k2()" class="w-full md:w-auto bg-brand-accent hover:bg-blue-600 text-white px-6 py-4 rounded-full font-bold shadow-2xl shadow-blue-600/40 flex items-center justify-center gap-3 transition-all transform hover:scale-105 border-2 border-white/10">
+            <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span>Get Free AI Report</span>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. The Redirection Function
+       
+        // Reset Function
+        function resetAnalysis() {
+            // Hide Modal
+            document.getElementById('result-modal').classList.add('hidden');
+            // Ensure Input is visible again (in case it wasn't)
+            document.getElementById('input-state').classList.remove('hidden');
+            document.getElementById('loading-state').classList.add('hidden');
+            // Clear input
+            document.getElementById('ticker-input').value = ''; 
+        }
+
+        // 2. Interactive Analysis Logic
+        function startAnalysis() {
+            const inputState = document.getElementById('input-state');
+            const loadingState = document.getElementById('loading-state');
+            const resultModal = document.getElementById('result-modal');
+            const tickerInput = document.getElementById('ticker-input');
+            const loadingText = document.getElementById('loading-text');
+            const loadingSubtext = document.getElementById('loading-subtext');
+            const progressBar = document.getElementById('progress-bar');
+
+            if(!tickerInput.value.trim()) {
+                alert("Please enter a stock ticker (e.g., AAPL)");
+                return;
+            }
+
+            // Hide Input, Show Loading
+            inputState.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            // Animation Sequence
+            let progress = 0;
+            
+            // Step 1: Historical Data (0-1s)
+            loadingText.innerText = "Mining Historical Data...";
+            loadingSubtext.innerText = "Analyzing 10 years of price action...";
+            progressBar.style.width = "30%";
+
+            setTimeout(() => {
+                // Step 2: Market News (1-2s)
+                loadingText.innerText = "Scanning Market News...";
+                loadingSubtext.innerText = "Processing global sentiment & news feeds...";
+                progressBar.style.width = "65%";
+            }, 1000);
+
+            setTimeout(() => {
+                // Step 3: AI Prediction (2-3s)
+                loadingText.innerText = "Generating AI Prediction...";
+                loadingSubtext.innerText = "Calculating confidence score...";
+                progressBar.style.width = "95%";
+            }, 2000);
+
+            setTimeout(() => {
+                // Done
+                // 1. Hide Loading
+                loadingState.classList.add('hidden');
+                // 2. Show Input again (so background looks normal)
+                inputState.classList.remove('hidden');
+                
+                // UPDATED: Generate Random Score between 92.0 and 98.0
+                const scoreElement = document.getElementById('confidence-score');
+                const randomScore = (Math.random() * (98 - 92) + 92).toFixed(1);
+                scoreElement.innerText = randomScore + '%';
+
+                // 3. Show Result Modal (Overlay)
+                resultModal.classList.remove('hidden');
+            }, 3000);
+        }
+
+        // 3. Generate Scrolling Testimonials
+        const reviews = [
+            { name: "Sarah J.", time: "2m ago", text: "The AI accuracy is scary good. NVDA prediction was spot on." },
+            { name: "Mike T.", time: "5m ago", text: "Finally a tool that cuts through the noise. Love the daily reports." },
+            { name: "David L.", time: "12m ago", text: "Joined the community last week. Best decision for my portfolio." },
+            { name: "Emily R.", time: "18m ago", text: "The risk management advice saved me from a huge loss on TSLA." },
+            { name: "James B.", time: "25m ago", text: "Simple interface, powerful data. Exactly what I needed." },
+            { name: "Robert K.", time: "32m ago", text: "I was skeptical about AI trading, but the results speak for themselves." },
+            { name: "Linda M.", time: "40m ago", text: "The WhatsApp alerts are super convenient. Never miss a trade." },
+            { name: "William P.", time: "45m ago", text: "Great support team. They explained the strategy clearly." },
+            { name: "Thomas H.", time: "1h ago", text: "My ROI has increased by 40% since using this analyzer." },
+            { name: "Jessica W.", time: "1h ago", text: "Highly recommend for anyone serious about US stocks." }
+        ];
+
+        const track = document.getElementById('testimonials-track');
+        
+        function createReviewCard(review) {
+            return `
+                <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 backdrop-blur-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-xs font-bold text-white">
+                                ${review.name.charAt(0)}
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">${review.name}</div>
+                                <div class="text-[10px] text-slate-500">${review.time}</div>
+                            </div>
+                        </div>
+                        <div class="text-brand-accent text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">"${review.text}"</p>
+                </div>
+            `;
+        }
+
+        // Double the array for seamless loop
+        const allReviews = [...reviews, ...reviews];
+        track.innerHTML = allReviews.map(createReviewCard).join('');
+
+
+        // 4. Generate Scrolling Performance Table Data
+        const tickers = ['NVDA', 'AMD', 'TSLA', 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NFLX', 'PLTR', 'COIN', 'MARA', 'SMCI', 'AVGO', 'QCOM'];
+        const tableContainer = document.getElementById('table-scroll-container');
+
+        function generateRowData() {
+            const ticker = tickers[Math.floor(Math.random() * tickers.length)];
+            const entry = (Math.random() * 200 + 50).toFixed(2); // Random price 50-250
+            const gainPercent = (Math.random() * 150 + 20).toFixed(1); // Gain 20% - 170%
+            const exit = (parseFloat(entry) * (1 + parseFloat(gainPercent)/100)).toFixed(2);
+            const days = Math.floor(Math.random() * 90 + 10);
+            
+            return `
+                <div class="grid grid-cols-4 p-4 border-b border-slate-800 hover:bg-slate-800/30 transition-colors text-sm items-center">
+                    <div class="font-bold text-white flex items-center gap-2">
+                        <span class="w-1 h-4 bg-brand-accent rounded-full"></span>
+                        ${ticker}
+                    </div>
+                    <div class="text-slate-400 font-mono">$${entry}</div>
+                    <div class="text-right font-bold text-brand-success">+${gainPercent}%</div>
+                    <div class="text-right text-slate-500 text-xs">${days} days</div>
+                </div>
+            `;
+        }
+
+        // Generate 20 rows, then duplicate for loop
+        let tableContent = '';
+        for(let i=0; i<20; i++) {
+            tableContent += generateRowData();
+        }
+        
+        // Create two blocks for seamless scrolling
+        tableContainer.innerHTML = `
+            <div>${tableContent}</div>
+            <div>${tableContent}</div>
+        `;
+
+        // 5. Scroll Logic for Floating Button
+        // Show button after scrolling past 0.7 of the viewport height (approx entering 2nd screen)
+        window.addEventListener('scroll', () => {
+            const floatingBtn = document.getElementById('floating-cta');
+            const scrollThreshold = window.innerHeight * 0.7; // Adjusted to show on 2nd screen
+
+            if (window.scrollY > scrollThreshold) {
+                floatingBtn.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+            } else {
+                floatingBtn.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+            }
+        });
+
+    </script>
+</body>
+</html>
