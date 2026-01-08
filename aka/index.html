@@ -92,6 +92,12 @@
             background-color: rgba(11, 17, 32, 0.85);
             backdrop-filter: blur(5px);
         }
+        
+        /* Mask for testimonials */
+        .mask-linear {
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-white pb-20">
@@ -100,16 +106,29 @@
     <nav class="fixed w-full z-40 glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-14 md:h-16">
+                <!-- Logo Section -->
                 <div class="flex items-center gap-2 md:gap-3">
                     <div class="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-blue-600 to-cyan-400 rounded flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">
                         <i class="fa-solid fa-chart-line text-sm md:text-base"></i>
                     </div>
                     <span class="font-bold text-lg md:text-xl tracking-tight text-white">AI Stock Analyzer</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#performance" class="text-sm font-medium hover:text-brand-accent transition-colors">Performance</a>
-                    <a href="#features" class="text-sm font-medium hover:text-brand-accent transition-colors">Features</a>
-                    <a href="#philosophy" class="text-sm font-medium hover:text-brand-accent transition-colors">Philosophy</a>
+                
+                <!-- Right Side: Links (Desktop Only) + Button (All Screens) -->
+                <div class="flex items-center gap-6">
+                    <!-- Text Links: Hidden on Mobile (hidden), Visible on Desktop (md:flex) -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#performance" class="text-sm font-medium hover:text-brand-accent transition-colors">Performance</a>
+                        <a href="#features" class="text-sm font-medium hover:text-brand-accent transition-colors">Features</a>
+                        <a href="#philosophy" class="text-sm font-medium hover:text-brand-accent transition-colors">Philosophy</a>
+                    </div>
+                    
+                    <!-- Diagnosis Button: Visible on ALL screens -->
+                    <!-- On mobile: slightly smaller padding. On desktop: normal padding. -->
+                    <a href="#analysis-section" class="bg-brand-accent/10 border border-brand-accent/50 text-brand-accent hover:bg-brand-accent hover:text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all flex items-center gap-2 group">
+                        <i class="fa-solid fa-stethoscope group-hover:animate-pulse"></i>
+                        Diagnosis
+                    </a>
                 </div>
             </div>
         </div>
@@ -123,64 +142,19 @@
             <div class="absolute bottom-20 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-[80px]"></div>
         </div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                <i class="fa-solid fa-bolt text-yellow-400 mr-1.5"></i> Top US Quant Team Reveal
+                <i class="fa-solid fa-bolt text-yellow-400 mr-1.5"></i> Exclusive Access
             </div>
             
-            <h1 class="text-3xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-4 md:mb-6 leading-tight">
-                Core AI Trading <br>
-                <span class="text-gradient">Strategy Unveiled</span>
+            <!-- Hero Text -->
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
+                America's Top Quant Team Unveils Its <br class="hidden md:block">
+                <span class="text-gradient">Core AI Trading Strategy</span>
             </h1>
 
-            <p class="text-base md:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 leading-relaxed px-2">
-                The Next Nvidia Is Here — Projected Gains > 300% — <span class="text-white font-semibold">Limited Spots: Join the Quant Revolution!</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- Interactive Demo (Analysis Section) -->
-    <section id="analysis-section" class="py-12 md:py-20 bg-blue-900/10 border-y border-blue-900/30 scroll-mt-20">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="mb-8">
-                <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-600/20 text-blue-400 mb-4 md:mb-6 border border-blue-500/30">
-                    <i class="fa-solid fa-magnifying-glass text-xl md:text-2xl"></i>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">AI Stock Diagnosis</h2>
-                <p class="text-sm md:text-base text-slate-400">Enter US Stock Ticker for Instant AI-Driven Analysis</p>
-            </div>
-
-            <!-- 1. Input State -->
-            <div id="input-state" class="bg-brand-card p-2 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto flex flex-col sm:flex-row gap-2 transition-all duration-300">
-                <input 
-                    type="text" 
-                    id="ticker-input"
-                    placeholder="e.g. NVDA" 
-                    class="flex-1 bg-transparent text-white px-4 md:px-6 py-3 md:py-4 outline-none placeholder:text-slate-600 font-mono uppercase text-lg text-center sm:text-left"
-                >
-                <button onclick="startAnalysis()" class="bg-brand-accent hover:bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-colors whitespace-nowrap w-full sm:w-auto">
-                    Start Analysis
-                </button>
-            </div>
-
-            <!-- 2. Loading State (Hidden by default) -->
-            <div id="loading-state" class="hidden bg-brand-card p-6 md:p-8 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto">
-                <div class="flex flex-col items-center">
-                    <div class="relative w-16 h-16 mb-4">
-                        <div class="absolute inset-0 rounded-full border-4 border-slate-700"></div>
-                        <div class="absolute inset-0 rounded-full border-4 border-t-brand-accent border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
-                        <i class="fa-solid fa-microchip absolute inset-0 m-auto flex items-center justify-center text-cyan-400 text-xl animate-pulse"></i>
-                    </div>
-                    <h3 class="text-white font-bold text-lg mb-2" id="loading-text">Initializing AI Core...</h3>
-                    <div class="w-full bg-slate-800 rounded-full h-2 mb-2 overflow-hidden">
-                        <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full loading-bar"></div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-mono" id="loading-subtext">Connecting to server...</p>
-                </div>
-            </div>
-            
-            <p class="mt-6 text-xs text-slate-500 max-w-lg mx-auto px-4">
-                Note: This is a simplified demo. Real-time data processing requires connection to our secure server.
+            <p class="text-base md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-medium">
+                The Next NVDA Has Arrived — Projected Gains Exceeding 300% — <span class="text-white font-bold">Limited Spots: Join the Quant Revolution!</span>
             </p>
         </div>
     </section>
@@ -245,72 +219,88 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Section (Updated Layout & Content) -->
     <section id="features" class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
-                <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
-                    Unlock Your Edge: <br>
-                    <span class="text-brand-accent">AI Insights, Significant Returns.</span>
-                </h2>
-                <p class="text-sm md:text-lg text-slate-400 mb-8">
-                    Proprietary AI identifies high-potential trades first.
-                </p>
-                
-                <ul class="space-y-4 md:space-y-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-10">
+                Unlock Your Edge: <br>
+                <span class="text-brand-accent">AI Insights, Significant Returns.</span>
+            </h2>
+            
+            <div class="bg-slate-800/30 rounded-3xl p-8 border border-slate-700/50 backdrop-blur-sm shadow-xl">
+                <ul class="space-y-6 text-left inline-block w-full max-w-2xl">
                     <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
-                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
-                        </div>
-                        <span class="text-slate-300 text-sm md:text-base">Get up to 10 premium signals designed for significant growth.</span>
+                        <span class="text-2xl mt-0.5 shrink-0">⚡️</span>
+                        <span class="text-slate-200 text-lg font-medium">Proprietary AI pinpoints high-potential trades first.</span>
                     </li>
                     <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
-                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
-                        </div>
-                        <span class="text-slate-300 text-sm md:text-base">Trade with surgical precision and historical high accuracy.</span>
+                        <span class="text-2xl mt-0.5 shrink-0">💰</span>
+                        <span class="text-slate-200 text-lg font-medium">Get up to 10 premium signals designed for significant growth.</span>
                     </li>
                     <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-brand-accent/20 flex items-center justify-center mt-1 shrink-0">
-                            <i class="fa-solid fa-check text-brand-accent text-xs"></i>
-                        </div>
-                        <span class="text-white font-semibold text-sm md:text-base">Limited spots, lock yours now for a smarter trading journey!</span>
+                        <span class="text-2xl mt-0.5 shrink-0">🏆</span>
+                        <span class="text-slate-200 text-lg font-medium">Trade with surgical precision and historically high accuracy.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl mt-0.5 shrink-0">🔐</span>
+                        <span class="text-slate-200 text-lg font-medium">Join an exclusive community of informed, top-tier traders.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl mt-0.5 shrink-0">⏰</span>
+                        <span class="text-white text-lg font-bold">Limited access remains. Secure your spot and trade smarter now!</span>
                     </li>
                 </ul>
-            </div>
-            
-            <!-- Abstract Visual -->
-            <div class="relative mt-8 md:mt-0">
-                <div class="aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 p-6 md:p-8 flex flex-col justify-center relative overflow-hidden shadow-2xl">
-                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#60A5FA 1px, transparent 1px); background-size: 20px 20px;"></div>
-                    
-                    <div class="grid grid-cols-2 gap-3 md:gap-4 relative z-10">
-                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm">
-                            <i class="fa-solid fa-microchip text-cyan-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
-                            <div class="text-[10px] md:text-xs text-slate-400">Processing</div>
-                            <div class="font-bold text-white text-base md:text-lg">2.4M Nodes</div>
-                        </div>
-                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm">
-                            <i class="fa-solid fa-bullseye text-brand-success text-xl md:text-2xl mb-2 md:mb-3"></i>
-                            <div class="text-[10px] md:text-xs text-slate-400">Precision</div>
-                            <div class="font-bold text-white text-base md:text-lg">98.5%</div>
-                        </div>
-                        <div class="bg-slate-800/90 p-4 md:p-6 rounded-xl border border-slate-600 backdrop-blur-sm col-span-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-[10px] md:text-xs text-slate-400">Signal Strength</span>
-                                <span class="text-[10px] md:text-xs text-brand-accent font-bold animate-pulse">STRONG BUY</span>
-                            </div>
-                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full w-[92%] bg-gradient-to-r from-blue-500 to-cyan-400"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials (Scrolling) -->
+    <!-- Interactive Demo (Analysis Section) - MOVED HERE -->
+    <section id="analysis-section" class="py-12 md:py-20 bg-blue-900/10 border-y border-blue-900/30 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-600/20 text-blue-400 mb-4 md:mb-6 border border-blue-500/30">
+                    <i class="fa-solid fa-magnifying-glass text-xl md:text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">AI Stock Diagnosis</h2>
+                <p class="text-sm md:text-base text-slate-400">Enter US Stock Ticker for Instant AI-Driven Analysis</p>
+            </div>
+
+            <!-- 1. Input State -->
+            <div id="input-state" class="bg-brand-card p-2 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto flex flex-col sm:flex-row gap-2 transition-all duration-300">
+                <input 
+                    type="text" 
+                    id="ticker-input"
+                    placeholder="e.g. NVDA" 
+                    class="flex-1 bg-transparent text-white px-4 md:px-6 py-3 md:py-4 outline-none placeholder:text-slate-600 font-mono uppercase text-lg text-center sm:text-left"
+                >
+                <button onclick="startAnalysis()" class="bg-brand-accent hover:bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-colors whitespace-nowrap w-full sm:w-auto">
+                    Start Analysis
+                </button>
+            </div>
+
+            <!-- 2. Loading State (Hidden by default) -->
+            <div id="loading-state" class="hidden bg-brand-card p-6 md:p-8 rounded-2xl border border-slate-700 shadow-xl max-w-lg mx-auto">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-16 h-16 mb-4">
+                        <div class="absolute inset-0 rounded-full border-4 border-slate-700"></div>
+                        <div class="absolute inset-0 rounded-full border-4 border-t-brand-accent border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
+                        <i class="fa-solid fa-microchip absolute inset-0 m-auto flex items-center justify-center text-cyan-400 text-xl animate-pulse"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2" id="loading-text">Initializing AI Core...</h3>
+                    <div class="w-full bg-slate-800 rounded-full h-2 mb-2 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full loading-bar"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-mono" id="loading-subtext">Connecting to server...</p>
+                </div>
+            </div>
+            
+            <p class="mt-6 text-xs text-slate-500 max-w-lg mx-auto px-4">
+                Note: This is a simplified demo. Real-time data processing requires connection to our secure server.
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials (Scrolling - Updated Content) -->
     <section class="py-12 md:py-20 max-w-5xl mx-auto px-4 overflow-hidden">
         <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">Real User Feedback</h2>
         
@@ -321,12 +311,12 @@
             <div class="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-brand-dark to-transparent z-10"></div>
 
             <div id="testimonials-track" class="animate-scroll-vertical space-y-4">
-                <!-- Javascript will populate this with 2 sets of 10 reviews for seamless loop -->
+                <!-- Javascript will populate this -->
             </div>
         </div>
     </section>
 
-    <!-- Philosophy Section (Updated) -->
+    <!-- Philosophy Section -->
     <section id="philosophy" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
         
         <!-- Main Header -->
@@ -383,9 +373,9 @@
                     <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-brain text-xl"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-3">AI-Driven Strategic Engine</h4>
+                    <h4 class="text-lg font-bold text-white mb-3">AI-Powered Strategy Engine</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        Our system is based on advanced multi-model AI technology for deep analysis. In our community, we turn this powerful data into actionable winning strategies.
+                        Our system, built on advanced, multi-model AI, delivers deep analysis. In the community, we translate this powerful data into actionable, winning strategies.
                     </p>
                 </div>
                 <!-- Card 2 -->
@@ -395,7 +385,7 @@
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">Clarity in a Complex Market</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        Get objective, AI-driven assessments free from emotional bias. Our experts help you explore the "why" behind the data for truly confident decisions.
+                        Get objective, AI-driven evaluations, free from emotional bias. Our experts then help you uncover the 'why' behind the data for truly confident decisions.
                     </p>
                 </div>
                 <!-- Card 3 -->
@@ -405,7 +395,7 @@
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">Collaborative Expert Circle</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        An exclusive trading think tank. Share strategies, get real-time actionable guidance from seasoned experts, and grow alongside motivated investors.
+                        This is an exclusive trading think-tank. Share strategies, get actionable, real-time guidance from seasoned experts, and grow alongside motivated investors.
                     </p>
                 </div>
             </div>
@@ -413,7 +403,7 @@
 
         <!-- Technical Core Subsection -->
         <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Our Technical Core</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Our Technological Core</h3>
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Tech Item 1 -->
                 <div class="flex gap-4 p-6 bg-slate-900/50 rounded-xl border border-slate-800">
@@ -422,7 +412,7 @@
                     </div>
                     <div>
                         <h4 class="text-white font-bold mb-2">Predictive Quantitative Models</h4>
-                        <p class="text-sm text-slate-400">Our AI uses advanced statistical models to uncover market inefficiencies. We share these high-probability setups, including full entry and exit points, with the community.</p>
+                        <p class="text-sm text-slate-400">Our AI uses advanced statistical models to find market inefficiencies. We share these high-probability setups with our community, complete with entry and exit points.</p>
                     </div>
                 </div>
                 <!-- Tech Item 2 -->
@@ -432,7 +422,7 @@
                     </div>
                     <div>
                         <h4 class="text-white font-bold mb-2">Market Sentiment Pulse</h4>
-                        <p class="text-sm text-slate-400">We process millions of data points to gauge market sentiment. This gives our community a crucial edge, helping you predict market shifts before they happen.</p>
+                        <p class="text-sm text-slate-400">We process millions of data points to gauge market sentiment. This gives our community a crucial edge, helping you anticipate market shifts before they happen.</p>
                     </div>
                 </div>
                 <!-- Tech Item 3 -->
@@ -442,7 +432,7 @@
                     </div>
                     <div>
                         <h4 class="text-white font-bold mb-2">Instant Market Intelligence</h4>
-                        <p class="text-sm text-slate-400">Connected to real-time market data, our AI ensures every analysis is up-to-the-minute. We alert the community to opportunities the moment they arise.</p>
+                        <p class="text-sm text-slate-400">Connected to live market feeds, our AI ensures every analysis is current. We alert the community to opportunities the moment they arise.</p>
                     </div>
                 </div>
                 <!-- Tech Item 4 -->
@@ -452,7 +442,7 @@
                     </div>
                     <div>
                         <h4 class="text-white font-bold mb-2">Macroeconomic Advantage</h4>
-                        <p class="text-sm text-slate-400">Our AI scans global trends to see the big picture. This macro insight helps our community members make smarter, more informed decisions on US stocks.</p>
+                        <p class="text-sm text-slate-400">Our AI scans global trends to understand the bigger picture. This macro insight helps our community make smarter, more informed decisions on US stocks.</p>
                     </div>
                 </div>
             </div>
@@ -460,7 +450,7 @@
 
     </section>
 
-    <!-- Footer (Updated) -->
+    <!-- Footer -->
     <footer class="bg-brand-dark border-t border-slate-900 pt-12 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
@@ -603,18 +593,16 @@
             }, 3000);
         }
 
-        // 3. Generate Scrolling Testimonials
+        // 3. Generate Scrolling Testimonials (UPDATED with new text)
         const reviews = [
-            { name: "Sarah J.", time: "2m ago", text: "The AI accuracy is scary good. NVDA prediction was spot on." },
-            { name: "Mike T.", time: "5m ago", text: "Finally a tool that cuts through the noise. Love the daily reports." },
-            { name: "David L.", time: "12m ago", text: "Joined the community last week. Best decision for my portfolio." },
-            { name: "Emily R.", time: "18m ago", text: "The risk management advice saved me from a huge loss on TSLA." },
-            { name: "James B.", time: "25m ago", text: "Simple interface, powerful data. Exactly what I needed." },
-            { name: "Robert K.", time: "32m ago", text: "I was skeptical about AI trading, but the results speak for themselves." },
-            { name: "Linda M.", time: "40m ago", text: "The WhatsApp alerts are super convenient. Never miss a trade." },
-            { name: "William P.", time: "45m ago", text: "Great support team. They explained the strategy clearly." },
-            { name: "Thomas H.", time: "1h ago", text: "My ROI has increased by 40% since using this analyzer." },
-            { name: "Jessica W.", time: "1h ago", text: "Highly recommend for anyone serious about US stocks." }
+            { name: "Alex M.", time: "2m ago", text: "I was skeptical, but the transparent track record convinced me to try. The analysis on COIN was spot on. This isn't just hype; it's data-driven results. I'm telling all my friends." },
+            { name: "Sarah J.", time: "15m ago", text: "The app is clean, the signals are clear, and the community is genuinely supportive. Finally found a place that cuts through the market noise. My portfolio has never been healthier." },
+            { name: "Mike T.", time: "42m ago", text: "I've been in other trading groups, but this is different. The AI gives us a solid, unbiased starting point, and then the experts in the chat help refine the timing. It’s like having a quant team in your pocket." },
+            { name: "David L.", time: "1h ago", text: "The Capital Flow analysis is a game-changer. It flagged unusual institutional buying in VST right before it popped. I would have completely missed that on my own. Insane edge." },
+            { name: "Chris P.", time: "2h ago", text: "That MSTR call was legendary. The AI flagged it, the community confirmed the setup, and I just rode the wave. Easiest +200% I've ever made. Still buzzing from that win." },
+            { name: "Emily R.", time: "3h ago", text: "As a long-term investor, I use the reports to do a quarterly 'health check' on my portfolio. The fundamental analysis summaries are incredibly detailed and save me hours of personal research." },
+            { name: "Jason K.", time: "5h ago", text: "Honestly, I've learned more about reading charts in three months here than in three years on my own. The AI points out the pattern, and the experts explain the 'why'. It’s an incredible educational tool." },
+            { name: "Daniel H.", time: "6h ago", text: "I was skeptical, but the transparent track record convinced me to try. The analysis on COIN was spot on. This isn't just hype; it's data-driven results. I'm telling all my friends." }
         ];
 
         const track = document.getElementById('testimonials-track');
@@ -646,7 +634,7 @@
         track.innerHTML = allReviews.map(createReviewCard).join('');
 
 
-        // 4. Generate Scrolling Performance Table Data (UPDATED)
+        // 4. Generate Scrolling Performance Table Data
         // Map Tickers to Names
         const stockMap = {
             'NVDA': 'NVIDIA', 'AMD': 'Advanced Micro', 'TSLA': 'Tesla',
@@ -666,7 +654,7 @@
             const exit = (parseFloat(entry) * (1 + parseFloat(gainPercent)/100)).toFixed(2);
             const days = Math.floor(Math.random() * 90 + 10);
             
-            // Updated Grid to 5 columns (Ticker removed)
+            // Grid cols 5 (Ticker removed)
             return `
                 <div class="grid grid-cols-5 p-4 border-b border-slate-800 hover:bg-slate-800/30 transition-colors text-[10px] md:text-sm items-center gap-1 md:gap-2">
                     <div class="font-bold text-white truncate col-span-1" title="${name}">${name}</div>
