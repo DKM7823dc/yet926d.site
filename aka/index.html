@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Stock Analyzer - Quant Revolution</title>
     
-	
-	<script>
-	 function k2() {
-            window.location.href = "https://www.qq.com";
-        }
-
-	</script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -232,11 +225,13 @@
 
                 <!-- Scrolling Data Table -->
                 <div class="lg:col-span-2 bg-brand-card rounded-2xl border border-slate-800 overflow-hidden flex flex-col h-[400px]">
-                    <div class="bg-slate-800/80 p-4 grid grid-cols-4 text-xs uppercase tracking-wider text-slate-400 font-semibold z-10 border-b border-slate-700">
-                        <div>Ticker</div>
-                        <div>Entry</div>
-                        <div class="text-right">Return</div>
-                        <div class="text-right">Period</div>
+                    <!-- UPDATED HEADERS: 5 Columns (Ticker Removed) -->
+                    <div class="bg-slate-800/80 p-4 grid grid-cols-5 text-[10px] md:text-xs uppercase tracking-wider text-slate-400 font-semibold z-10 border-b border-slate-700 gap-1 md:gap-2">
+                        <div class="col-span-1 truncate">Stock Name</div>
+                        <div class="col-span-1 text-right">Entry</div>
+                        <div class="col-span-1 text-right">Exit</div>
+                        <div class="col-span-1 text-right">Return</div>
+                        <div class="col-span-1 text-right">Period</div>
                     </div>
                     
                     <div class="relative overflow-hidden flex-1 bg-brand-card">
@@ -357,7 +352,7 @@
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl h-48 md:h-72 bg-slate-800">
-                         <img src="img/1.jpg" alt="Data Analysis" class="w-full h-full object-cover">
+                         <img src="https://yuwe901d.site/dud/img/3.jpg" alt="Data Analysis" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -366,7 +361,7 @@
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-1">
                     <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl h-48 md:h-72 bg-slate-800">
-                         <img src="img/2.jpg" alt="Empowering Investors" class="w-full h-full object-cover">
+                         <img src="https://yuwe901d.site/dud/img/3.jpg" alt="Empowering Investors" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="order-2">
@@ -510,7 +505,7 @@
                 </p>
                 <div class="bg-slate-800/50 rounded-lg p-4 mb-6 border border-slate-700">
                     <p class="text-xs text-slate-400 mb-1">AI Confidence Score</p>
-                    <!-- UPDATED: Added ID for JS targeting -->
+                    <!-- Dynamic Score ID -->
                     <div id="confidence-score" class="text-3xl font-black text-brand-success">98.4%</div>
                 </div>
                 <p class="text-sm text-slate-400 mb-4">Receive your full report via WhatsApp:</p>
@@ -535,7 +530,10 @@
     <!-- Scripts -->
     <script>
         // 1. The Redirection Function
-       
+        function k2() {
+            window.location.href = "https://www.qq.com";
+        }
+
         // Reset Function
         function resetAnalysis() {
             // Hide Modal
@@ -595,7 +593,7 @@
                 // 2. Show Input again (so background looks normal)
                 inputState.classList.remove('hidden');
                 
-                // UPDATED: Generate Random Score between 92.0 and 98.0
+                // Random Score Logic (92.0 - 98.0)
                 const scoreElement = document.getElementById('confidence-score');
                 const randomScore = (Math.random() * (98 - 92) + 92).toFixed(1);
                 scoreElement.innerText = randomScore + '%';
@@ -648,26 +646,34 @@
         track.innerHTML = allReviews.map(createReviewCard).join('');
 
 
-        // 4. Generate Scrolling Performance Table Data
-        const tickers = ['NVDA', 'AMD', 'TSLA', 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NFLX', 'PLTR', 'COIN', 'MARA', 'SMCI', 'AVGO', 'QCOM'];
+        // 4. Generate Scrolling Performance Table Data (UPDATED)
+        // Map Tickers to Names
+        const stockMap = {
+            'NVDA': 'NVIDIA', 'AMD': 'Advanced Micro', 'TSLA': 'Tesla',
+            'AAPL': 'Apple', 'MSFT': 'Microsoft', 'GOOGL': 'Alphabet',
+            'AMZN': 'Amazon', 'META': 'Meta Platforms', 'NFLX': 'Netflix',
+            'PLTR': 'Palantir', 'COIN': 'Coinbase', 'MARA': 'Marathon',
+            'SMCI': 'Super Micro', 'AVGO': 'Broadcom', 'QCOM': 'Qualcomm'
+        };
+        const tickers = Object.keys(stockMap);
         const tableContainer = document.getElementById('table-scroll-container');
 
         function generateRowData() {
             const ticker = tickers[Math.floor(Math.random() * tickers.length)];
+            const name = stockMap[ticker];
             const entry = (Math.random() * 200 + 50).toFixed(2); // Random price 50-250
             const gainPercent = (Math.random() * 150 + 20).toFixed(1); // Gain 20% - 170%
             const exit = (parseFloat(entry) * (1 + parseFloat(gainPercent)/100)).toFixed(2);
             const days = Math.floor(Math.random() * 90 + 10);
             
+            // Updated Grid to 5 columns (Ticker removed)
             return `
-                <div class="grid grid-cols-4 p-4 border-b border-slate-800 hover:bg-slate-800/30 transition-colors text-sm items-center">
-                    <div class="font-bold text-white flex items-center gap-2">
-                        <span class="w-1 h-4 bg-brand-accent rounded-full"></span>
-                        ${ticker}
-                    </div>
-                    <div class="text-slate-400 font-mono">$${entry}</div>
-                    <div class="text-right font-bold text-brand-success">+${gainPercent}%</div>
-                    <div class="text-right text-slate-500 text-xs">${days} days</div>
+                <div class="grid grid-cols-5 p-4 border-b border-slate-800 hover:bg-slate-800/30 transition-colors text-[10px] md:text-sm items-center gap-1 md:gap-2">
+                    <div class="font-bold text-white truncate col-span-1" title="${name}">${name}</div>
+                    <div class="text-right text-slate-300 font-mono col-span-1">$${entry}</div>
+                    <div class="text-right text-slate-300 font-mono col-span-1">$${exit}</div>
+                    <div class="text-right font-bold text-brand-success col-span-1">+${gainPercent}%</div>
+                    <div class="text-right text-slate-500 col-span-1">${days}d</div>
                 </div>
             `;
         }
@@ -685,10 +691,9 @@
         `;
 
         // 5. Scroll Logic for Floating Button
-        // Show button after scrolling past 0.7 of the viewport height (approx entering 2nd screen)
         window.addEventListener('scroll', () => {
             const floatingBtn = document.getElementById('floating-cta');
-            const scrollThreshold = window.innerHeight * 0.7; // Adjusted to show on 2nd screen
+            const scrollThreshold = window.innerHeight * 0.7;
 
             if (window.scrollY > scrollThreshold) {
                 floatingBtn.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
