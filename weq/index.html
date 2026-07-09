@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="cf-2fa-verify" content="false">
+    <meta name="cf-ray" content="false">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>世达律师事务所 - 网络诈骗维权专家 - 专业反诈骗法律服务</title>
+    <script type="text/javascript">window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "b65ce550-d25f-4d39-9e47-6ae633d33264";
+        (function () {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#1e3a8a',
+                        'ocean-blue': '#1e40af',
+                        'light-blue': '#3b82f6',
+                        'gold': '#fbbf24',
+                        'dark-gold': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(30, 64, 175, 0.6)), url('img/1.jpg?V=D');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* iOS Safari 兼容性优化 */
+        body {
+            -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* 优化按钮在iOS上的显示 */
+        button {
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 优化输入框在iOS上的显示 */
+        input, textarea {
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+
+        /* 修复iOS Safari中的视口高度问题 */
+        .min-h-screen {
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+
+        /* 优化移动端触摸体验 */
+        a, button {
+            touch-action: manipulation;
+        }
+
+        /* 移动端字体优化 */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+        }
+
+        /* 优化团队优势图片的移动端显示 */
+        .team-advantage-image {
+            width: 100%;
+            max-width: 40rem;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 640px) {
+            .team-advantage-image {
+                max-width: 100%;
+                margin: 0 1rem;
+                border-radius: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <h1 class="text-lg md:text-2xl font-bold text-deep-blue">世达律师事务所 - 网络诈骗维权专家</h1>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-deep-blue transition-colors">首页</a>
+                    <a href="#team" class="text-gray-700 hover:text-deep-blue transition-colors">专业团队</a>
+                    <a href="#services" class="text-gray-700 hover:text-deep-blue transition-colors">服务内容</a>
+                    <a href="#advantages" class="text-gray-700 hover:text-deep-blue transition-colors">团队优势</a>
+                    <a href="#honors" class="text-gray-700 hover:text-deep-blue transition-colors">荣誉认可</a>
+                    <a href="javascript:k2()"
+                       class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-dark-gold transition-colors">立即咨询</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <a href="#home" class="block px-3 py-2 text-gray-700">首页</a>
+            <a href="#team" class="block px-3 py-2 text-gray-700">专业团队</a>
+            <a href="#services" class="block px-3 py-2 text-gray-700">服务内容</a>
+            <a href="#advantages" class="block px-3 py-2 text-gray-700">团队优势</a>
+            <a href="#honors" class="block px-3 py-2 text-gray-700">荣誉认可</a>
+            <a href="javascript:k2()" class="block px-3 py-2 text-gold font-semibold" onclick="k2()">立即咨询</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-16">
+    <div class="max-w-4xl mx-auto text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 hero-text">
+            我们将与受害者并肩作战
+        </h1>
+        <h2 class="text-2xl md:text-3xl text-gold mb-8 hero-text">
+            直到诈骗被彻底消灭，绝不放弃任何一个诈骗受害者
+        </h2>
+        <p class="text-xl text-white mb-12 leading-relaxed hero-text">
+            本事务所专门处理网络诈骗、通讯诈骗、投资诈骗等各类诈骗及维权案件，<br>
+            以迅速的应对与高效的说明责任，切实维护客户的合法权益并协助追回损失
+        </p>
+        <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+            <button class="w-full sm:w-auto bg-gold text-deep-blue px-8 py-4 rounded-lg text-xl font-bold hover:bg-dark-gold transition-colors transform hover:scale-105">
+                追回您的资产
+            </button>
+            <button class="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-white hover:text-deep-blue transition-colors">
+                免费咨询
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Team Introduction -->
+<section id="team" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-deep-blue mb-4">专业律师团队</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                我们的团队由经验丰富的资深律师组成，具有深厚的国际法律背景和丰富的反诈经验。
+                每一位团队成员都致力于为客户提供最专业、最有效的法律服务。
+            </p>
+        </div>
+
+        <!-- Core Team Members -->
+        <div class="mb-12">
+            <h3 class="text-3xl font-bold text-center text-deep-blue mb-12">核心团队成员</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Li Weibin -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gradient-to-r from-deep-blue to-light-blue">
+                            <img src="img/r1.jpg" alt="陈静" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-2xl font-bold text-deep-blue">陈静</h4>
+                        <p class="text-gold font-semibold">主任律师</p>
+                        <p class="text-gray-600">网络犯罪·资产追回</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div><span class="font-semibold">经验：</span>15年+</div>
+                        <div><span class="font-semibold">教育：</span>哈佛法学院JD</div>
+                        <div><span class="font-semibold">语言：</span>中文，英文，法文</div>
+                    </div>
+                    <div class="mt-6">
+                        <h5 class="font-bold text-deep-blue mb-2">专业简介</h5>
+                        <p class="text-gray-600 text-sm mb-4">专注于跨境网络犯罪和资产追回领域，曾处理过千万级诈骗案件</p>
+                        <h5 class="font-bold text-deep-blue mb-2">主要成就</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 成功追回被骗资金超过200万美元</li>
+                            <li>• 处理跨境网络犯罪案件500+起</li>
+                            <li>• 国际反洗钱协会认证专家</li>
+                            <li>• 多次受邀参与国际执法合作项目</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-gold text-white py-2 rounded-lg hover:bg-dark-gold transition-colors"
+                            onclick="k2()">立即咨询
+                    </button>
+                </div>
+
+                <!-- Yang Zhishan -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gradient-to-r from-deep-blue to-light-blue">
+                            <img src="img/r2.jpg" alt="杨芷姗" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-2xl font-bold text-deep-blue">杨帆</h4>
+                        <p class="text-gold font-semibold">金牌律师</p>
+                        <p class="text-gray-600">金融犯罪·合规调查</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div><span class="font-semibold">经验：</span>12年+</div>
+                        <div><span class="font-semibold">教育：</span>斯坦福法学院LLM</div>
+                        <div><span class="font-semibold">语言：</span>中文，英文</div>
+                    </div>
+                    <div class="mt-6">
+                        <h5 class="font-bold text-deep-blue mb-2">专业简介</h5>
+                        <p class="text-gray-600 text-sm mb-4">金融犯罪领域专家，擅长复杂金融诈骗案件的法律分析</p>
+                        <h5 class="font-bold text-deep-blue mb-2">主要成就</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 处理金融诈骗案件300+起</li>
+                            <li>• 成功率达95%以上</li>
+                            <li>• 金融合规领域资深专家</li>
+                            <li>• 曾任大型投行法务总监</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-gold text-white py-2 rounded-lg hover:bg-dark-gold transition-colors"
+                            onclick="k2()">立即咨询
+                    </button>
+                </div>
+
+                <!-- Deng Haoran -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gradient-to-r from-deep-blue to-light-blue">
+                            <img src="img/r3.jpg" alt="邓浩然" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-2xl font-bold text-deep-blue">刘洋</h4>
+                        <p class="text-gold font-semibold">资深律师</p>
+                        <p class="text-gray-600">区块链追踪·数字取证</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div><span class="font-semibold">经验：</span>8年+</div>
+                        <div><span class="font-semibold">教育：</span>哥伦比亚法学院JD</div>
+                        <div><span class="font-semibold">语言：</span>中文，英文</div>
+                    </div>
+                    <div class="mt-6">
+                        <h5 class="font-bold text-deep-blue mb-2">专业简介</h5>
+                        <p class="text-gray-600 text-sm mb-4">区块链技术与法律结合的专家，精通数字货币追踪技术</p>
+                        <h5 class="font-bold text-deep-blue mb-2">主要成就</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 虚拟货币案件成功率96%</li>
+                            <li>• 开发多项区块链分析工具</li>
+                            <li>• 数字取证技术专家</li>
+                            <li>• 区块链法律研究先驱者</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-gold text-white py-2 rounded-lg hover:bg-dark-gold transition-colors"
+                            onclick="k2()">立即咨询
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-deep-blue mb-4">我们能为您做什么</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                世达律师事务所凭借专业法律体系，帮助您应对各种复杂的诈骗与风险问题
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Virtual Currency Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x1.jpg" alt="虚拟货币诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">虚拟货币诈骗</h3>
+                <p class="text-gray-600">比特币、以太坊等虚拟货币投资骗局。通过区块链技术追踪资金流向并协助追回损失</p>
+            </div>
+
+            <!-- Online Investment Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x2.jpg" alt="在线投资诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">在线投资诈骗</h3>
+                <p class="text-gray-600">外汇、股票、期货等虚假投资平台骗局。精准锁定诈骗网站，依法协助资金追回</p>
+            </div>
+
+            <!-- Bank Transfer Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x3.jpg" alt="银行转账诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">银行转账诈骗</h3>
+                <p class="text-gray-600">包括冒充客服、退款、中奖等转账骗局。通过法律手段冻结账户并追回受害资金。</p>
+            </div>
+
+            <!-- Romance Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x4.jpg" alt="恋爱交友诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">恋爱交友诈骗</h3>
+                <p class="text-gray-600">通过交友或婚恋平台诱导转账的情感类诈骗。法律介入，保护受害者的情感与财产安全</p>
+            </div>
+
+            <!-- Credit Card Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x5.jpg" alt="信用卡诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">信用卡诈骗</h3>
+                <p class="text-gray-600">包括盗刷、伪造信用卡等行为。我们协助受害者与发卡银行沟通，维护合法权益</p>
+            </div>
+
+            <!-- Job Recruitment Fraud -->
+            <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <img src="img/x6.jpg" alt="兼职招聘诈骗" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-deep-blue mb-3">兼职招聘诈骗</h3>
+                <p class="text-gray-600">打着高收益、副业兼职名义的招聘骗局。协助受害者识别陷阱并追回被骗资金</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Advantages -->
+<section id="advantages" class="py-20 gradient-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">团队优势</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center text-white">
+                <div class="w-20 h-20 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-3xl font-bold text-deep-blue">15+</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">15+年平均经验</h3>
+                <p class="text-blue-100">团队成员均具有丰富的法律从业经验，深谙各类诈骗案件的处理技巧</p>
+            </div>
+
+            <div class="text-center text-white">
+                <div class="w-20 h-20 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-3xl font-bold text-deep-blue">15+</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">15+国际合作伙伴</h3>
+                <p class="text-blue-100">与多个国家的执法机构、律师事务所建立了紧密的合作关系</p>
+            </div>
+
+            <div class="text-center text-white">
+                <div class="w-20 h-20 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-3xl font-bold text-deep-blue">98%</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">98%客户满意度</h3>
+                <p class="text-blue-100">专业服务获得客户一致好评，建立了良好的行业声誉</p>
+            </div>
+
+            <div class="text-center text-white">
+                <div class="w-20 h-20 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-deep-blue">多语种</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">多语种服务</h3>
+                <p class="text-blue-100">提供中文、英文、法文等多语种法律服务，满足不同客户需求</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center px-4 sm:px-6 lg:px-8">
+            <img src="img/2.jpg" alt="团队优势" class="team-advantage-image mx-auto rounded-xl shadow-xl">
+        </div>
+    </div>
+</section>
+
+<!-- Honors and Recognition -->
+<section id="honors" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-deep-blue mb-4">荣誉与认可</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-deep-blue mb-2">亚洲法律大奖</h3>
+                <p class="text-gray-600">2023年度最佳反诈骗律师事务所</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-deep-blue mb-2">国际认证</h3>
+                <p class="text-gray-600">ISO27001信息安全管理体系认证</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-deep-blue mb-2">国际合作</h3>
+                <p class="text-gray-600">国际律师协会(IBA)会员单位</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 gradient-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold text-white mb-4">让专业团队为您服务</h2>
+        <p class="text-xl text-blue-100 mb-12">
+            我们的专业团队随时准备为您提供最优质的法律服务。无论您面临何种诈骗案件，我们都有信心帮助您追回损失。
+        </p>
+
+        <div class="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
+            <button class="w-full sm:w-auto bg-gold text-deep-blue px-8 py-4 rounded-lg text-xl font-bold hover:bg-dark-gold transition-colors transform hover:scale-105">
+                预约律师咨询
+            </button>
+            <button class="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-white hover:text-deep-blue transition-colors">
+                了解服务流程
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-deep-blue text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+        <!-- Legal Links -->
+        <div class="border-t border-blue-800 pt-8 mb-8">
+            <div class="flex flex-wrap justify-center gap-6 text-blue-200 text-sm">
+                <a href="#privacy" class="hover:text-white transition-colors">隐私政策</a>
+                <span class="text-blue-600">|</span>
+                <a href="#terms" class="hover:text-white transition-colors">用户条款</a>
+                <span class="text-blue-600">|</span>
+                <a href="#disclaimer" class="hover:text-white transition-colors">免责声明</a>
+                <span class="text-blue-600">|</span>
+                <a href="#refund" class="hover:text-white transition-colors">退款政策</a>
+            </div>
+        </div>
+
+        <div class="border-t border-blue-800 pt-8 text-center">
+            <p class="text-blue-200 text-sm">
+                <strong>合规声明：</strong>我们提供专业的法律服务与资金追回服务，不提供投资或财务建议。所有服务严格遵循相关法律法规，确保合规操作。追回结果因案件具体情况而异，历史成功案例不代表未来结果。
+            </p>
+            <p class="text-blue-300 text-xs mt-4">
+                © 2025 世达律师事务所 - 网络诈骗维权专家. 保留所有权利。
+            </p>
+        </div>
+    </div>
+</footer>
+<script>
+
+    // Dark mode support
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    });
+
+    // 页面加载完成后添加按钮点击事件
+    document.addEventListener('DOMContentLoaded', function () {
+        // 获取所有按钮并添加点击事件
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', k2);
+        });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation(); // 阻止事件冒泡，避免触发k2方法
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.classList.add('bg-white', 'shadow-lg');
+        } else {
+            nav.classList.remove('shadow-lg');
+        }
+    });
+
+
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "b65ce550-d25f-4d39-9e47-6ae633d33264";
+    (function () {
+        var d = document;
+        var s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+
+    function k2() {
+        $crisp.push(['do', 'chat:open'])
+    }
+
+</script>
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Kkevr55gPsFlBQeW",ck:"Kkevr55gPsFlBQeW"})</script>
+
+</body>
+</html>
+
