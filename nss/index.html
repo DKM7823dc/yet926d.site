@@ -2,6 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+    
+	<script>
+!function(f,b,e,v,n,t,s) {
+    if(f.fbq) return;
+    n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+    };
+    if(!f._fbq) f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+// 提取 URL 中的 fbid 参数
+function getQueryParam(param) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+var fbid = getQueryParam('fbid');
+if (fbid) {
+    fbq('init', fbid);
+    fbq('track', 'PageView');
+}
+</script>
+  
+ <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2494069564423132');
+
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2494069564423132&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+  
+< script >
+function k2(e) {
+    e && e.preventDefault();
+   fbq('track', 'AddToCart');
+ fbq('track', 'Contact');
+    fbq('track', 'Purchase');
+    window.open('https://www.qq.com', '_blank')
+} (function() {
+    var c = document.getElementById('reviewCarousel');
+    if (!c) return;
+    var cards = c.querySelectorAll('.review-card');
+    var i = 0;
+    var t = cards.length;
+    var w = cards[0] ? cards[0].offsetWidth + 10 : 260;
+    function scroll() {
+        i = (i + 1) % t;
+        c.scrollTo({
+            left: i * w,
+            behavior: 'smooth'
+        })
+    }
+    setInterval(scroll, 2000)
+})() < /script>/
+
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MeetU - Live Dating | Download Now</title>
   <style>
@@ -151,7 +229,7 @@
 <section class="sec" style="text-align:center">
   <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.25rem">Ready for <span style="background:linear-gradient(135deg,#ff4b6e,#c44dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Tonight</span>?</h3>
   <p style="color:rgba(255,255,255,0.4);font-size:0.7rem;margin-bottom:0.85rem">5M+ Nigerians already downloaded. Your night starts here.</p>
-  <a href="javascript:void(0)" class="android-btn" onclick="k2(event)">Download for Android<small style="display:block;font-size:0.55rem;font-weight:400;opacity:0.6;margin-top:1px">Free · 98MB</small></a>
+  <a href="javascript:void(0)" class="android-btn" onclick="k2(event)">Download for Android<small style="display:block;font-size:0.55rem;font-weight:400;opacity:0.6;margin-top:1px">Free </small></a>
 </section>
 
 <div class="ft">&copy; 2026 MeetU - Casual Dating</div>
@@ -160,9 +238,6 @@
   <a href="javascript:void(0)" class="float-cta-btn" onclick="k2(event)">Download Now</a>
 </div>
 
-<script>
-function k2(e){e&&e.preventDefault();window.open('https://www.qq.com','_blank')}
-(function(){var c=document.getElementById('reviewCarousel');if(!c)return;var cards=c.querySelectorAll('.review-card');var i=0;var t=cards.length;var w=cards[0]?cards[0].offsetWidth+10:260;function scroll(){i=(i+1)%t;c.scrollTo({left:i*w,behavior:'smooth'})}setInterval(scroll,2000)})()
-</script>
+
 </body>
 </html>
